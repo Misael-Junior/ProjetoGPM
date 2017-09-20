@@ -89,6 +89,24 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 	}
 	
+	$scope.excluir = function(id){
+		
+		if($window.confirm("Deseja Realmente Excluir esse Registro ???")){
+			
+			response.success(function(data, status, headers, config){
+				
+				$scope.init();
+				
+			});
+			
+			response.error(function(data, status, headers, config){
+				
+				$window.alert(data);
+				
+			});
+		}
+	}
+	
 	$scope.usuarios = new Array();
 	
 	$scope.init = function(){
@@ -107,24 +125,6 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 			
 		});
 		
-	}
-	
-	$scope.excluir = function(id){
-		
-		if($window.confirm("Deseja Realmente Excluir esse Registro ???")){
-			
-			response.success(function(data, status, headers, config){
-				
-				$scope.init();
-				
-			});
-			
-			response.error(function(data, status, headers, config){
-				
-				$window.alert(data);
-				
-			});
-		}
 	}
 	
 });
