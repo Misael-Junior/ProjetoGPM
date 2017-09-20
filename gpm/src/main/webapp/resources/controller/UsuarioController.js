@@ -6,6 +6,7 @@ var UsuarioControllerApp = angular.module("UsuarioControllerApp", []);
 
 UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $http){
 	
+	$scope.id       = null;
 	$scope.nome     = null;
 	$scope.login    = null;
 	$scope.senha    = null;
@@ -73,6 +74,14 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 			if(data.codigo == 1){
 				
 				$window.alert("Cadastro de " + data.nome + " Alterado com Sucesso !!!");
+				
+				$scope.id       = null;
+				$scope.nome     = null;
+				$scope.login    = null;
+				$scope.senha    = null;
+				$scope.rsenha   = null;
+				$scope.telefone = null;
+								
 				window.location.href = "../alterar";
 			
 			}else{
@@ -93,6 +102,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 		if($window.confirm("Deseja Realmente Excluir esse Registro ???")){
 			
+			var response = $http['delete']("excluir/+id");
 			response.success(function(data, status, headers, config){
 				
 				$scope.init();
