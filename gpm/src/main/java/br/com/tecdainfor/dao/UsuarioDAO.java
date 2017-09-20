@@ -6,7 +6,7 @@ import br.com.tecdainfor.model.Usuario;
 
 public interface UsuarioDAO {
 	
-	public void cadastrarUsuario(Usuario usuario);
+	public Usuario cadastrarUsuario(Usuario usuario);
 	
 	public Usuario loginUsuario(Usuario usuario);
 	

@@ -23,11 +23,17 @@ public class UsuarioController {
 		return new ModelAndView("cadastro-usuario");
 	}
 	
-	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
-	public @ResponseBody void salvar(@RequestBody Usuario usuario) {
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	public @ResponseBody Usuario salvar(@RequestBody Usuario usuario) {
 		
-		this.usuariodao.cadastrarUsuario(usuario); 
+		try{
+			
+			this.usuariodao.cadastrarUsuario(usuario);
+				
+		}catch(Exception e){
+			
+		}
 		
+		return usuario;
 	}
-
 }

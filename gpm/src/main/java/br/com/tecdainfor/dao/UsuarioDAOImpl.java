@@ -17,9 +17,10 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	private EntityManager manager;
 	
 	@javax.transaction.Transactional
-	public void cadastrarUsuario(Usuario usuario) {
+	public Usuario cadastrarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		manager.merge(usuario);
+		return usuario;
 	}
 
 	public Usuario loginUsuario(Usuario usuario) {
