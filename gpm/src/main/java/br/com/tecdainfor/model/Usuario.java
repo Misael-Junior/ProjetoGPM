@@ -21,7 +21,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_usuario_pk", nullable = false)
-	private int codigo;
+	private int id;
 	@NotEmpty(message = "Nome é obrigatória")
 	@Size(max = 60, message = "O Nome não pode conter mais de 60 caracteres")
 	@Column(name = "st_nome", nullable = false)
@@ -45,11 +45,11 @@ public class Usuario {
 	
 	//Gets e Sets da classe usuário.
 	
-	public int getCodigo() {
-		return codigo;
+	public int getId() {
+		return id;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;

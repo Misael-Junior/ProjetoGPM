@@ -18,48 +18,55 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	
 	@javax.transaction.Transactional
 	public Usuario cadastrarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		manager.merge(usuario);
-		return usuario;
+		return manager.merge(usuario);
 	}
-
+	
+	@javax.transaction.Transactional
 	public Usuario loginUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@javax.transaction.Transactional
 	public void esqueciSenhaUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	@javax.transaction.Transactional
 	public void alterarSenhaUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	public void alterarUsuario(Usuario usuario) {
+	
+	@javax.transaction.Transactional
+	public Usuario alterarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		manager.merge(usuario);
+		return manager.merge(usuario);
 	}
-
-	public Usuario consultarUsuarioCodigo(int codigo) {
+	
+	@javax.transaction.Transactional
+	public Usuario consultarUsuarioCodigo(int id) {
 		// TODO Auto-generated method stub
-		return manager.find(Usuario.class, codigo);
+		return manager.find(Usuario.class, id);
 	}
-
+	
+	@javax.transaction.Transactional
 	public Usuario consultarUsuarioNome(String nome) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public void Excluir(int codigo) {
+	
+	@javax.transaction.Transactional
+	public Usuario excluir(int id) {
 		// TODO Auto-generated method stub
-		Usuario usuario = this.consultarUsuarioCodigo(codigo);
+		Usuario usuario = this.consultarUsuarioCodigo(id);
 		manager.remove(usuario);
+		return usuario;
 	}
-
-	public List<Usuario> TodosUsuarios() {
+	
+	@javax.transaction.Transactional
+	public List<Usuario> listarUsuario() {
 		// TODO Auto-generated method stub
 		return manager.createQuery("SELECT u FROM Usuario u ORDER BY u.nome", Usuario.class).getResultList();
 	}

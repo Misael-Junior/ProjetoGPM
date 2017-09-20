@@ -14,14 +14,14 @@ public interface UsuarioDAO {
 	
 	public void alterarSenhaUsuario(Usuario usuario);
 	
-	public void alterarUsuario(Usuario usuario);
+	public Usuario alterarUsuario(Usuario usuario);
 	
-	public Usuario consultarUsuarioCodigo(int codigo);
+	public Usuario consultarUsuarioCodigo(int id);
 	
 	public Usuario consultarUsuarioNome(String nome);
 	
-	public void Excluir(int codigo);
+	public Usuario excluir(int id);
 	
-	public List<Usuario> TodosUsuarios();
+	public List<Usuario> listarUsuario();
 
 }
