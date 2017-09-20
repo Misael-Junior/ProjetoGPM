@@ -18,9 +18,9 @@ public class UsuarioController {
 	@Autowired
 	UsuarioDAO usuariodao;
 	
-	@RequestMapping(value = "/cadastrar.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
 	public ModelAndView Cadastrar(){
-		return new ModelAndView("cadastrar");
+		return new ModelAndView("cadastro-usuario");
 	}
 	
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
