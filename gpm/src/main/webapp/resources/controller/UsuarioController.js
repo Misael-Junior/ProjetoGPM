@@ -2,7 +2,7 @@
  * Controlador de Usuário.
  */
 
-var UsuarioControllerApp = angular.module("UsuarioControllerApp", []);
+var UsuarioControllerApp = angular.module("UsuarioControllerApp",[]);
 
 UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $http){
 	

@@ -160,13 +160,13 @@
 }
 
 .panel-computador{
-	width: 900px;
-	height: 580px;
 	margin: 40px auto;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .panel-title-computador{
-	margin: 10px 340px; 
+	margin: 10px; 
 	color: #FFFFFF;
 }
 

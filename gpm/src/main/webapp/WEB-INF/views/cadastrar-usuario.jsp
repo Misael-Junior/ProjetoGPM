@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html ng-app="UsuarioControllerApp" >
 	<head>
 	<meta charset="utf-8" />
 	<title>GPM | CADASTRO DE USUÁRIO</title>
-	<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/style.css" />
-	
 	</head>
 	<body>
 		<div class="navbar-top navbar-default navbar-static-top">
@@ -109,7 +107,7 @@
 							<div class="col-sm-3">
 								<input type="password" class="form-control" id="repetir-senha"
 									name="repetir-senha" placeholder="Senha do Usuário"
-									required="required" autofocus="autofocus" ng-model="rsenha"/>
+									required="required" autofocus="autofocus" ng-model="rsenha" />
 								</div>
 						</div>
 						<div class="form-group">
