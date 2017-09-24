@@ -1,5 +1,5 @@
 /**
- * Controlador de Usuário.
+ * Controlador de Usuário AgularJS.
  */
 
 var UsuarioControllerApp = angular.module("UsuarioControllerApp",[]);
@@ -12,6 +12,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.senha    = null;
 	$scope.rsenha   = null;
 	$scope.telefone = null;
+
 	
 	$scope.cadastrarUsuario = function(){
 		

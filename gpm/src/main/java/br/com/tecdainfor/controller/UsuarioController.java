@@ -24,18 +24,18 @@ public class UsuarioController {
 	//Mapeamento das telas
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
 	public ModelAndView Cadastrar(){
-		return new ModelAndView("cadastrar-usuario");
+		return new ModelAndView("usuario/cadastrar-usuario");
 	}
 		
 	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
 	public ModelAndView Alterar(@PathVariable int id){
 		usuariodao.consultarUsuarioCodigo(id);
-		return new ModelAndView("alterar-usuario");
+		return new ModelAndView("usuario/alterar-usuario");
 	}
 	
 	/*@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ModelAndView list(){
-		return new ModelAndView("listar-usuario");
+		return new ModelAndView("usuario/listar-usuario");
 	}*/
 	
 	//Recebimento e tratamento dos dados via HTTP.
