@@ -17,6 +17,8 @@
 	
 	</head>
 	<body>
+	
+		<!-- Topo da Página e MENU -->
 		<div class="navbar-top navbar-default navbar-static-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -76,12 +78,15 @@
 				</div>
 			</div>
 		</div>
-
+		
+		<!-- Painel -->
 		<div class="panel panel-computador panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title panel-title-computador">Cadastro de
 					Usuário</h3>
 			</div>
+			
+			<!-- Formulário -->
 			<form class="form-horizontal" ng-controller="UsuarioController">
 				<div class="panel panel-default">
 					<div class="panel-body">
@@ -94,6 +99,7 @@
 									autofocus="autofocus" ng-model="nome" ng-minlength="4" ng-maxlength="10"/>
 							</div>
 						</div>
+						<span class='msg-erro msg-nome'></span>
 						<div class="form-group">
 							<label for="setor" class="col-sm-2 control-label">Email*</label>
 							<div class="col-sm-4">
@@ -102,6 +108,7 @@
 									autofocus="autofocus" ng-model="email"/>
 							</div>
 						</div>
+						<span class='msg-erro msg-email'></span>
 						<div class="form-group">
 							<label for="ip" class="col-sm-2 control-label">Senha*</label>
 							<div class="col-sm-3">
@@ -110,6 +117,7 @@
 									autofocus="autofocus" ng-model="senha"/>
 							</div>
 						</div>
+						<span class='msg-erro msg-senha'></span>
 						<div class="form-group">
 							<label for="ip" class="col-sm-2 control-label">Repetir
 								Senha*</label>
@@ -119,6 +127,7 @@
 									required="required" autofocus="autofocus" ng-model="rsenha" />
 								</div>
 						</div>
+						<span class='msg-erro msg-rsenha'></span>
 						<div class="form-group">
 							<label for="ramal" class="col-sm-2 control-label">Telefone</label>
 							<div class="col-sm-3">
@@ -127,6 +136,7 @@
 									required="required" autofocus="autofocus" ng-model="telefone"/>
 							</div>
 						</div>
+						<span class='msg-erro msg-telefone'></span>
 						<div class="form-group">
 							<label for="status" class="col-sm-2 control-label">Perfil*</label>
 							<div class="col-sm-2">
@@ -136,6 +146,7 @@
 								</select>
 							</div>
 						</div>
+						<span class='msg-erro msg-perfil'></span>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								<button type="button" class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>
@@ -145,7 +156,8 @@
 				</div>
 			</form>
 		</div>
-
+		
+		<!-- Rodapé da Página -->
 		<div class="navbar navbar-default navbar-static-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -179,6 +191,8 @@
 				</div>
 			</div>
 		</div>		
+		
+		<!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
 		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
