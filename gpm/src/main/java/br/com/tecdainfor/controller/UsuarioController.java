@@ -27,7 +27,7 @@ public class UsuarioController {
 		return new ModelAndView("usuario/cadastrar-usuario");
 	}
 		
-	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/alterar", method = RequestMethod.GET)
 	public ModelAndView Alterar(@PathVariable int id){
 		usuariodao.consultarUsuarioCodigo(id);
 		return new ModelAndView("usuario/alterar-usuario");

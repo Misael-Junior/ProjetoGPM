@@ -28,7 +28,7 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						     <li><a href="../index">Início</a></li>
+						     <li><a href="#">Início</a></li>
 						     <li><a href="#">Usuário</a></li>
 						     <li><a href="#">Computador</a></li>
 						     <li><a href="#">Impressora</a></li>
