@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
 <html lang="pt-br">
 	<head>
 	<meta charset="utf-8">
@@ -8,8 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CRUD com Bootstrap 3</title>
 	
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<!-- CSS -->
+	<link href="<c:url value='../resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
+	<link href="<c:url value='../resources/css/style.css' />" rel="stylesheet"></link>
+	
 	</head>
 	<body>
 	
@@ -143,8 +146,12 @@
 			</form>
 		</div>
 	
-	
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<!-- AngularJS e JS -->
+		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
+		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
+		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+		<script src="<c:url value='../resources/js/validador.js' />"></script>
+		<script src="<c:url value='../resources/js/validador.min.js' />"></script>
 	</body>
 </html>

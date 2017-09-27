@@ -7,7 +7,8 @@
 
 <ul style="list-style-type:square">
   <li><a href="usuario/cadastrar">Cadastrar</a></li>
-  <li><a href="usuario/consultarRegistros.html">Consultar</a></li>  
+  <li><a href="usuario/listar">Editar</a></li>
+  <li><a href="usuario/editar">Listar</a></li>  
 </ul>
 
 </body>

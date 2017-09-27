@@ -1,157 +1,42 @@
-/* Container do topo da página */
+/* Style */
 
-.navbar-top{
-	border-color: #428bca;
-	height: 60px;
-	box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
-	background: #428bca;
-	border-radius: 0;
-	z-index: 999;
-	position: relative;
-	-webkit-transition: 0.3s linear;
-	-moz-transition: 0.3s linear;
-	-o-transition: 0.3s linear;
-	transition: 0.3s linear;
-}
 
-/*Cor da Mensagem de Erro */
-.msg-erro{ 
-	color: red; 
-}
-
-/* Label do topo da Página */
-
-.label{
-	background-color: #428bca;
-	font-size: 23px;
-	font-family: 'cursive';
-}
-
+/* Nav Top */
 .navbar{
 	background-color: #428bca;
-	height: 200px;
+	border-color: #428bca;
+	color: #FFFFFF;
+
 }
 
-.dropdown0{
-	margin-top: -46px;
-	margin-left: 820px;
-	position: absolute;
-	height: 0;
+/*Cor do Label do Topo*/
+.navbar-inverse .navbar-brand {
+   	color: #FFFFFF;
+   	font-size: 23px;
 }
 
-.dropdown1{
-	margin-top: 14px;
-	margin-left: 900px;
+/* Cor do item do Label selecionado */
+.navbar-inverse .navbar-brand:hover{
+	color: #87CEFF;
 }
 
-.dropdown2{
-	margin-top: -46px;
-	margin-left: 1000px;
+/*Cor do texto de Menu do Topo */
+.navbar-inverse .nav > li > a {
+   color: #FFFFFF;
 }
 
-.dropdown3{
-	margin-top: -46px;
-	margin-left: 1130px;
+/* Cor do item do menu selecionado */
+.navbar-inverse .nav > li > a:hover{
+   color: #87CEFF;
 }
 
-.dropdown4{
-	margin-top: -46px;
-	margin-left: 1250px;
-}
-
-.dropdown-toggle0{
-	margin-top: -14px;
-	background-color: #428bca;
-    border-color: #428bca;
-	height: 60px;
-	width: 80px;
-}
-
-.dropdown-toggle1{
-	margin-top: -14px;
-	background-color: #428bca;
-    border-color: #428bca;
-	height: 60px;
-	width: 100px;
-}
-
-.dropdown-toggle2{
-	margin-top: -14px;
-	background-color: #428bca;
-    border-color: #428bca;
-	height: 60px;
-	width: 130px;
-}
-
-.dropdown-toggle3{
-	margin-top: -14px;
-	background-color: #428bca;
-    border-color: #428bca;
-	height: 60px;
-	width: 120px;
-}
-
-.dropdown-toggle4{
-	margin-top: -14px;
-	background-color: #428bca;
-    border-color: #428bca;
-	height: 60px;
-	width: 80px;
-}
-
-.dropdown-toggle0:hover{
-	margin-top: -14px;
-	background-color: #1874CD;
-	border-color: #1874CD;
-	height: 60px;
-	width: 80px;
-}
-
-.dropdown-toggle1:hover{
-	margin-top: -14px;
-	background-color: #1874CD;
-	border-color: #1874CD;
-	height: 60px;
-	width: 100px;
-}
-
-.dropdown-toggle2:hover{
-	margin-top: -14px;
-	background-color: #1874CD;
-	border-color: #1874CD;
-	height: 60px;
-	width: 130px;
-}
-
-.dropdown-toggle3:hover{
-	margin-top: -14px;
-	background-color: #1874CD;
-	border-color: #1874CD;
-	height: 60px;
-	width: 120px;
-}
-
-.dropdown-toggle4:hover{
-	margin-top: -14px;
-	background-color: #1874CD;
-	border-color: #1874CD;
-	height: 60px;
-	width: 80px;
-}
-
-.dropdown-menu{
-	margin-top: -62px;
-	margin-left: 1000px;
-	background-color: #FFFFFF;
-	color: #1874CD;
-	border-color: #1874CD;
-}
-
+/* Mensagem de Confirmação */
 .alert{
 	margin-top: 40px;
 	text-align: center;
 }
 
+/* Painel do Login */
 .panel-login{
 	width: 400px;
 	height: 310px;
@@ -164,8 +49,12 @@
 	text-align: center;
 }
 
+/* Fim */
+
+/* Painel do Computador */
+
 .panel-computador{
-	margin: 40px auto;
+	margin: 100px auto;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -176,20 +65,19 @@
 	text-align: center;
 }
 
+/* Margin do Painel de Dentro*/
 .form-horizontal{
 	margin-top: 40px;
+	margin-bottom: 40px;
 }
+
+/* Margim Entre os inputs */
 
 .form-group{
 	margin-top: 20px;
 }
 
-.form-signin{
-	margin-top: 30px;
-	margin-left: 10px;
-	width: 378px;
-	height: 10px;
-}
+/* Botão Cadastrar */
 
 .btn-cadastrar{
 	margin: 10px 190px;
@@ -197,14 +85,10 @@
 	right: 10px;
 }
 
+/* Chackbox */
+
 .checkConectado{
 	margin: 4px 100px;
-}
-
-/* Cor do texto do rodapé */
-
-.col-md-4{
-	color: #FFFFFF;
 }
 
 
