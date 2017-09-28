@@ -40,7 +40,7 @@ public class UsuarioController {
 	
 	//Recebimento e tratamento dos dados via HTTP.
 	
-	@RequestMapping(value="/listar", method= RequestMethod.GET)
+	@RequestMapping(value = "/lista", method= RequestMethod.GET)
 	public @ResponseBody List<Usuario> ConsultarTodos(){
 		return 	this.usuariodao.listarUsuarios();
 	}

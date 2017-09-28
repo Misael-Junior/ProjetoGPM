@@ -13,26 +13,24 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.rsenha   = null;
 	$scope.telefone = null;	
 	
-	$scope.usuarios = new Array();
+	$scope.init = function(){
+		
+		$scope.usuarios = new Array();
 	
-		$scope.init = function(){
+		var response = $http.get("lista");
 		
-			var response = $http.get("listar");
+		response.success(function(data, status, headers, config){
 			
-			response.success(function(data, status, headers, config){
-				
-				$scope.usuarios = data;
-				
-			});
+			$scope.usuarios = data;
 			
-			response.error(function(data, status, headers, config){
-				
-				$window.alert(data);
-				
-			});
+		});
 		
+		response.error(function(data, status, headers, config){
+			
+			$window.alert(data);
+			
+		});	
 	}
-	
 	
 	$scope.cadastrarUsuario = function(){
 		

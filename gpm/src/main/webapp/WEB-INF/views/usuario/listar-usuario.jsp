@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html ng-app="UsuarioControllerApp">
 	<head>
 		 <meta charset="utf-8">
 		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,27 +66,27 @@
  	<div id="list" class="row">
 	
 	<div class="table-responsive col-md-12">
-		<table class="table table-striped" cellspacing="0" cellpadding="0">
+		<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="UsuarioController" data-ng-init="init()">
 			<thead>
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
 					<th>Email</th>
-					<th>Perfil</th>
 					<th>Telefone</th>
+					<th>Perfil</th>
 					<th class="actions">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="usuario in usuarios">
-					<td><span ng-bind="usuario.id"></span></td>
-					<td><span ng-bind="usuario.nome"></span></td>
-					<td><span ng-bind="usuario.email"></span></td>
-					<td><span ng-bind="usuario.perfil"></span></td>
-					<td><span ng-bind="usuario.telefone"></span></td>
+					<td>{{usuario.id}}</td>
+					<td>{{usuario.nome}}</td>
+					<td>{{usuario.email}}</td>
+					<td>{{usuario.telefone}}</td>
+					<td>{{usuario.perfil}}</td>
 					<td class="actions">
 						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="editar.html">Editar</a>
+						<a class="btn btn-warning btn-xs" href="editar.html" ng-href="usuario/alterar/{{usuario.id}}" >Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
 				</tr>

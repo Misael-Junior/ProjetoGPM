@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html>
+<html ng-app="UsuarioControllerApp" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -114,7 +114,7 @@
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-2">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil">
+									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
 										<option valeu="padrao" ng-selected="true">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>
@@ -123,7 +123,7 @@
 							<span class='msg-erro msg-perfil'></span>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
-									<button type="button" class="btn btn-primary" ng-click="cadastrarUsuario()">Alterar Cadastro</button>
+									<button type="button" class="btn btn-primary" ng-click="alterarUsuario()">Alterar Cadastro</button>
 								</div>
 							</div>
 						</div>
