@@ -12,7 +12,6 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.senha    = null;
 	$scope.rsenha   = null;
 	$scope.telefone = null;
-
 	
 	$scope.cadastrarUsuario = function(){
 		

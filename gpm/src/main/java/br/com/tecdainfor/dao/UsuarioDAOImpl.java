@@ -68,7 +68,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	@javax.transaction.Transactional
 	public List<Usuario> listarUsuario() {
 		// TODO Auto-generated method stub
-		return manager.createQuery("SELECT u FROM Usuario u ORDER BY u.nome", Usuario.class).getResultList();
+		return manager.createQuery("SELECT u FROM usuario u ORDER BY u.nome", Usuario.class).getResultList();
 	}
 
 }

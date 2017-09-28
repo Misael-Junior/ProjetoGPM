@@ -57,7 +57,7 @@
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário" required="required"
-										autofocus="autofocus" ng-model="nome" ng-minlength="4" ng-maxlength="10"/>
+										autofocus="autofocus" ng-model="nome"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-nome'></span>
@@ -83,8 +83,8 @@
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
 								<div class="col-sm-3">
-									<input type="password" class="form-control" id="repetir-senha"
-										name="repetir-senha" placeholder="Senha do Usuário"
+									<input type="password" class="form-control" id="rsenha"
+										name="rsenha" placeholder="Senha do Usuário"
 										required="required" autofocus="autofocus" ng-model="rsenha" />
 									</div>
 							</div>
@@ -97,17 +97,15 @@
 										required="required" autofocus="autofocus" ng-model="telefone"/>
 								</div>
 							</div>
-							<span class='msg-erro msg-telefone'></span>
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-2">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil">
-										<option valeu="padrao" ng-selected="true">Padrão</option>
-										<option valeu="admin">Admin</option>
+									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
+										<option valeu="Padrão" ng-selected="true">Padrão</option>
+										<option valeu="Admin">Admin</option>
 									</select>
 								</div>
 							</div>
-							<span class='msg-erro msg-perfil'></span>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<button type="button" class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>

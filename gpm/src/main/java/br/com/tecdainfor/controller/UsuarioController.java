@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.com.tecdainfor.dao.UsuarioDAO;
 import br.com.tecdainfor.model.Usuario;
 
@@ -27,16 +26,16 @@ public class UsuarioController {
 		return new ModelAndView("usuario/cadastrar-usuario");
 	}
 		
-	@RequestMapping(value = "/alterar", method = RequestMethod.GET)
+	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
 	public ModelAndView Alterar(@PathVariable int id){
 		usuariodao.consultarUsuarioCodigo(id);
 		return new ModelAndView("usuario/alterar-usuario");
 	}
 	
-	/*@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ModelAndView list(){
 		return new ModelAndView("usuario/listar-usuario");
-	}*/
+	}
 	
 	//Recebimento e tratamento dos dados via HTTP.
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
