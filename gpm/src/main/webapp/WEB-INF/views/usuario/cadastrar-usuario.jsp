@@ -29,7 +29,7 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="#">Início</a></li>
-						     <li><a href="#">Usuário</a></li>
+						     <li><a href="listar">Usuário</a></li>
 						     <li><a href="#">Computador</a></li>
 						     <li><a href="#">Impressora</a></li>
 			    		</ul>
@@ -122,8 +122,8 @@
 		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.min.js' />"></script>
+		<!-- <script src="<c:url value='../resources/js/validador.js' />"></script>
+		<script src="<c:url value='../resources/js/validador.min.js' />"></script> -->
 			 
 	</body>
 </html>

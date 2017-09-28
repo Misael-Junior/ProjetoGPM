@@ -22,6 +22,6 @@ public interface UsuarioDAO {
 	
 	public Usuario excluir(int id);
 	
-	public List<Usuario> listarUsuario();
+	public List<Usuario> listarUsuarios();
 
 }

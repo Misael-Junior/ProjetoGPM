@@ -7,6 +7,7 @@
  
    <persistence-unit name="PERSISTENCE_UNIT" transaction-type="RESOURCE_LOCAL">
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
+      <class>br.com.tecdainfor.model.Usuario</class>
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

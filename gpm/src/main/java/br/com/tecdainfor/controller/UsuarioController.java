@@ -21,6 +21,12 @@ public class UsuarioController {
 	UsuarioDAO usuariodao;
 	
 	//Mapeamento das telas
+	
+	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	public ModelAndView listar(){
+		return new ModelAndView("usuario/listar-usuario");
+	}
+	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
 	public ModelAndView Cadastrar(){
 		return new ModelAndView("usuario/cadastrar-usuario");
@@ -32,19 +38,20 @@ public class UsuarioController {
 		return new ModelAndView("usuario/alterar-usuario");
 	}
 	
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
-	public ModelAndView list(){
-		return new ModelAndView("usuario/listar-usuario");
+	//Recebimento e tratamento dos dados via HTTP.
+	
+	@RequestMapping(value="/listar", method= RequestMethod.GET)
+	public @ResponseBody List<Usuario> ConsultarTodos(){
+		return 	this.usuariodao.listarUsuarios();
 	}
 	
-	//Recebimento e tratamento dos dados via HTTP.
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
 	public @ResponseBody Usuario salvar(@RequestBody Usuario usuario) {
 		return this.usuariodao.cadastrarUsuario(usuario);				
 	}
 	
 	@RequestMapping(value = "/alterar", method = RequestMethod.POST)
-	public @ResponseBody Usuario alterar(@RequestBody Usuario usuario){
+	public @ResponseBody Usuario editar(@RequestBody Usuario usuario){
 		return this.usuariodao.alterarUsuario(usuario);
 	}
 	
@@ -52,9 +59,5 @@ public class UsuarioController {
 	public @ResponseBody Usuario excluir(@PathVariable int id){
 		return this.usuariodao.excluir(id);
 	}
-	
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
-	public @ResponseBody List<Usuario> listar(){
-		return this.usuariodao.listarUsuario();
-	}
+
 }

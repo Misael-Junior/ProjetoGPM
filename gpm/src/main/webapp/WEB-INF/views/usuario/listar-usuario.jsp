@@ -57,7 +57,7 @@
 			
 		</div>
 		<div class="col-sm-3">
-			<a href="index.html" class="btn btn-primary pull-right h2">Cadastrar Novo Usuário</a>
+			<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Novo Usuário</a>
 		</div>
 	</div> <!-- /#top -->
  
@@ -71,35 +71,25 @@
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
+					<th>Email</th>
 					<th>Perfil</th>
 					<th>Telefone</th>
 					<th class="actions">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1001</td>
-					<td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-					<td>Jes</td>
-					<td>01/01/2015</td>
+				<tr ng-repeat="usuario in usuarios">
+					<td><span ng-bind="usuario.id"></span></td>
+					<td><span ng-bind="usuario.nome"></span></td>
+					<td><span ng-bind="usuario.email"></span></td>
+					<td><span ng-bind="usuario.perfil"></span></td>
+					<td><span ng-bind="usuario.telefone"></span></td>
 					<td class="actions">
 						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
 						<a class="btn btn-warning btn-xs" href="editar.html">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
 				</tr>
-				<tr>
-					<td>1002</td>
-					<td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-					<td>Jes</td>
-					<td>01/01/2015</td>
-					<td class="actions">
-						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="editar.html">Editar</a>
-						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-					</td>
-				</tr>
-				
 			</tbody>
 		</table>
 	</div>
@@ -143,7 +133,7 @@
 		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.min.js' />"></script>
+		<!-- <script src="<c:url value='../resources/js/validador.js' />"></script>
+		<script src="<c:url value='../resources/js/validador.min.js' />"></script> -->
 </body>
 </html>
