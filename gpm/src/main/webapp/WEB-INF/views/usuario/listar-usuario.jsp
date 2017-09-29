@@ -86,7 +86,7 @@
 					<td>{{usuario.perfil}}</td>
 					<td class="actions">
 						<a class="btn btn-success btn-xs" href="view.html">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="editar.html" ng-href="usuario/alterar/{{usuario.id}}" >Editar</a>
+						<a class="btn btn-warning btn-xs" href="editar.html" ng-href="alterar/{{usuario.id}}" >Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
 				</tr>

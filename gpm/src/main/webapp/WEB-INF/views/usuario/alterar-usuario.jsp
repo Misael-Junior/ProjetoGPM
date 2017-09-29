@@ -10,8 +10,8 @@
 		<title>GPM | EDITAR CADASTRO DE USUÁRIO</title>
 		
 		<!-- CSS -->
-		<link href="<c:url value='../resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
-		<link href="<c:url value='../resources/css/style.css' />" rel="stylesheet"></link> 
+		<link href="<c:url value='/resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
+		<link href="<c:url value='/resources/css/style.css' />" rel="stylesheet"></link> 
 	
 	</head>
 	
@@ -59,9 +59,9 @@
 								<label for="nome" class="col-sm-2 control-label">Codigo
 								*</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control" id="nome" name="nome"
+									<input type="text" class="form-control" id="id" name="id"
 										placeholder="Código do Usuário" required="required"
-										autofocus="autofocus" ng-model="nome" ng-minlength="4" ng-maxlength="10"/>
+										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${usuario.id}'"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -70,7 +70,7 @@
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário" required="required"
-										autofocus="autofocus" ng-model="nome" ng-minlength="4" ng-maxlength="10"/>
+										autofocus="autofocus" ng-model="nome" ng-init="nome='${usuario.nome}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-nome'></span>
@@ -79,7 +79,7 @@
 								<div class="col-sm-4">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
-										autofocus="autofocus" ng-model="email"/>
+										autofocus="autofocus" ng-model="email" ng-init="nome='${usuario.email}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-email'></span>
@@ -88,7 +88,7 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="senha"
 										name="senha" placeholder="Senha do Usuário" required="required"
-										autofocus="autofocus" ng-model="senha"/>
+										autofocus="autofocus" ng-model="senha" ng-init="nome='${usuario.senha}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-senha'></span>
@@ -98,7 +98,7 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="repetir-senha"
 										name="repetir-senha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus" ng-model="rsenha" />
+										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="nome='${usuario.rsenha}'"/>
 									</div>
 							</div>
 							<span class='msg-erro msg-rsenha'></span>
@@ -107,14 +107,14 @@
 								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
-										required="required" autofocus="autofocus" ng-model="telefone"/>
+										required="required" autofocus="autofocus" ng-model="telefone" ng-init="nome='${usuario.telefone}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-telefone'></span>
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-2">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
+									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'" ng-init="nome='${usuario.perfil}'">
 										<option valeu="padrao" ng-selected="true">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>
@@ -133,12 +133,12 @@
 		</section>
 			
 		<!-- AngularJS e JS -->
-		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
-		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
-		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.min.js' />"></script>
+		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
+		<script src="<c:url value='/resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
+		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+		<!-- <script src="<c:url value='/resources/js/validador.js' />"></script>
+		<script src="<c:url value='/resources/js/validador.min.js' />"></script> -->
 			 
 		</body>
 	</footer>
