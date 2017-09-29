@@ -79,7 +79,7 @@
 								<div class="col-sm-4">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
-										autofocus="autofocus" ng-model="email" ng-init="nome='${usuario.email}'"/>
+										autofocus="autofocus" ng-model="email" ng-init="email='${usuario.email}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-email'></span>
@@ -88,7 +88,7 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="senha"
 										name="senha" placeholder="Senha do Usuário" required="required"
-										autofocus="autofocus" ng-model="senha" ng-init="nome='${usuario.senha}'"/>
+										autofocus="autofocus" ng-model="senha" ng-init="senha='${usuario.senha}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-senha'></span>
@@ -107,14 +107,14 @@
 								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
-										required="required" autofocus="autofocus" ng-model="telefone" ng-init="nome='${usuario.telefone}'"/>
+										required="required" autofocus="autofocus" ng-model="telefone" ng-init="telefone='${usuario.telefone}'"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-telefone'></span>
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-2">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'" ng-init="nome='${usuario.perfil}'">
+									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'" ng-init="perfil='${usuario.perfil}'">
 										<option valeu="padrao" ng-selected="true">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>
