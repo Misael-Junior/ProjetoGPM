@@ -33,7 +33,7 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="#">Início</a></li>
-						     <li><a href="#">Usuário</a></li>
+						     <li><a href="../listar">Usuário</a></li>
 						     <li><a href="#">Computador</a></li>
 						     <li><a href="#">Impressora</a></li>
 			    		</ul>
@@ -96,9 +96,9 @@
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
 								<div class="col-sm-3">
-									<input type="password" class="form-control" id="repetir-senha"
-										name="repetir-senha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="nome='${usuario.rsenha}'"/>
+									<input type="password" class="form-control" id="rsenha"
+										name="rsenha" placeholder="Senha do Usuário"
+										required="required" autofocus="autofocus" ng-model="rsenha"/>
 									</div>
 							</div>
 							<span class='msg-erro msg-rsenha'></span>

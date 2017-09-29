@@ -11,7 +11,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.login    = null;
 	$scope.senha    = null;
 	$scope.rsenha   = null;
-	$scope.telefone = null;	
+	$scope.telefone = null;
 	
 	$scope.init = function(){
 		
@@ -38,14 +38,14 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 		if($scope.senha == $scope.rsenha){
 			
-			var usuarioModel      = new Object();
-			usuarioModel.nome     = $scope.nome;
-			usuarioModel.email    = $scope.email;
-			usuarioModel.senha    = $scope.senha;
-			usuarioModel.telefone = $scope.telefone;
-			usuarioModel.perfil   = $scope.perfil;
+			var usuario      = new Object();
+			usuario.nome     = $scope.nome;
+			usuario.email    = $scope.email;
+			usuario.senha    = $scope.senha;
+			usuario.telefone = $scope.telefone;
+			usuario.perfil   = $scope.perfil;
 			
-			var response = $http.post("cadastrar", usuarioModel);
+			var response = $http.post("cadastrar", usuario);
 			
 		}else{
 			
@@ -81,14 +81,14 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.alterarUsuario = function(){
 		
-		var usuarioModel      = new Object();
-		usuarioModel.nome     = $scope.nome;
-		usuarioModel.email    = $scope.email;
-		usuarioModel.senha    = $scope.senha;
-		usuarioModel.telefone = $scope.telefone;
-		usuarioModel.perfil   = $scope.perfil;
+		var usuario      = new Object();
+		usuario.nome     = $scope.nome;
+		usuario.email    = $scope.email;
+		usuario.senha    = $scope.senha;
+		usuario.telefone = $scope.telefone;
+		usuario.perfil   = $scope.perfil;
 		
-		var response = $http.post("alterar", usuarioModel);
+		var response = $http.post("alterar", usuario);
 		
 		response.success(function(data, status, headers, config){
 			

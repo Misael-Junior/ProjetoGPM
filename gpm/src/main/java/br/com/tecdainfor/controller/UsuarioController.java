@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 import br.com.tecdainfor.dao.UsuarioDAO;
 import br.com.tecdainfor.model.Usuario;
 
@@ -34,8 +35,8 @@ public class UsuarioController {
 		
 	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
 	public ModelAndView Alterar(@PathVariable int id){
-		usuariodao.consultarUsuarioCodigo(id);
-		return new ModelAndView("usuario/alterar-usuario");
+		Usuario usuario = usuariodao.consultarUsuarioCodigo(id);
+		return new ModelAndView("usuario/alterar-usuario", "usuario", usuario);
 	}
 	
 	//Recebimento e tratamento dos dados via HTTP.
