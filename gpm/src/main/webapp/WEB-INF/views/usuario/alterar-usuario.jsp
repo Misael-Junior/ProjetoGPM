@@ -98,7 +98,7 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus" ng-model="rsenha"/>
+										required="required" autofocus="autofocus"/>
 									</div>
 							</div>
 							<span class='msg-erro msg-rsenha'></span>

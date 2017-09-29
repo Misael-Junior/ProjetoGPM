@@ -53,7 +53,8 @@ public class UsuarioController {
 	
 	@RequestMapping(value = "/alterar", method = RequestMethod.POST)
 	public @ResponseBody Usuario editar(@RequestBody Usuario usuario){
-		return this.usuariodao.alterarUsuario(usuario);
+		usuariodao.alterarUsuario(usuario);
+		return usuario;
 	}
 	
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.DELETE)
