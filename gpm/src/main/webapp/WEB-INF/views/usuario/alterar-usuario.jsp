@@ -98,7 +98,7 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus"/>
+										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="rsenha='${usuario.senha}'"/>
 									</div>
 							</div>
 							<span class='msg-erro msg-rsenha'></span>
@@ -114,8 +114,8 @@
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-2">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'" ng-init="perfil='${usuario.perfil}'">
-										<option valeu="padrao" ng-selected="true">Padrão</option>
+									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='${usuario.perfil}'">
+										<option valeu="padrao">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>
 								</div>

@@ -34,8 +34,6 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.cadastrarUsuario = function(){
 		
-		function validaCadastro(evt){}
-		
 		if($scope.senha == $scope.rsenha){
 			
 			var usuario      = new Object();
@@ -83,15 +81,25 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.alterarUsuario = function(){
 		
-		var usuario      = new Object();
-		usuario.id       = $scope.id;
-		usuario.nome     = $scope.nome;
-		usuario.email    = $scope.email;
-		usuario.senha    = $scope.senha;
-		usuario.telefone = $scope.telefone;
-		usuario.perfil   = $scope.perfil;
-		
-		var response = $http.post("../alterar", usuario);
+		if($scope.senha == $scope.rsenha){
+			
+			var usuario      = new Object();
+			usuario.id       = $scope.id;
+			usuario.nome     = $scope.nome;
+			usuario.email    = $scope.email;
+			usuario.senha    = $scope.senha;
+			usuario.telefone = $scope.telefone;
+			usuario.perfil   = $scope.perfil;
+			
+			var response = $http.post("../alterar", usuario);
+			
+		}else{
+			
+			$window.alert("Senhas não Conferem !!! ");
+			$scope.senha  = null;
+			$scope.rsenha = null;
+			
+		}
 		
 		response.success(function(data, status, headers, config){
 		
