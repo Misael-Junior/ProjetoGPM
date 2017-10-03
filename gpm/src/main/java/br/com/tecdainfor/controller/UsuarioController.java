@@ -39,6 +39,12 @@ public class UsuarioController {
 		return new ModelAndView("usuario/alterar-usuario", "usuario", usuario);
 	}
 	
+	@RequestMapping(value = "/visualizar/{id}", method = RequestMethod.GET)
+	public ModelAndView Visualizar(@PathVariable int id){
+		Usuario usuario = usuariodao.consultarUsuarioCodigo(id);
+		return new ModelAndView("usuario/visualizar-usuario", "usuario", usuario);
+	}
+	
 	//Recebimento e tratamento dos dados via HTTP.
 	
 	@RequestMapping(value = "/lista", method= RequestMethod.GET)
@@ -57,9 +63,9 @@ public class UsuarioController {
 		return usuario;
 	}
 	
-	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.DELETE)
-	public @ResponseBody Usuario excluir(@PathVariable int id){
-		return this.usuariodao.excluir(id);
+	@RequestMapping (value = "/excluir", method = RequestMethod.POST)
+	public @ResponseBody Usuario excluir(@RequestBody Usuario usuario){
+		return this.usuariodao.excluir(usuario.getId());
 	}
 
 }
