@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="UsuarioControllerApp">
+	<head>
+		<meta charset="utf-8"/>
+		<title>GPM | LISTAR USUÁRIOS</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" href="../resources/css/style.css"></link>
+	</head>
+	<body>
+		<!-- Nav Top -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div navbar-header>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					     <span class="sr-only">Toggle navigation</span>
+					     <span class="icon-bar"></span>
+					     <span class="icon-bar"></span>
+					     <span class="icon-bar"></span>
+		    		</button>
+		    		<a class="navbar-brand" href="#">Gerenciador Parque Máquinas</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+			    <ul class="nav navbar-nav navbar-right">
+				     <li><a href="index.html">Início</a></li>
+				     <li><a href="listar-usuario.html">Usuário</a></li>
+				     <li><a href="listar-computador.html">Computador</a></li>
+				     <li><a href="listar-impressora.html">Impressora</a></li>
+			    </ul>
+		   </div>
+		</nav>
+
+		 <div id="main" class="container-fluid" style="margin-top: 50px">
+
+		 	<div id="top" class="row">
+				<div class="col-sm-3">
+					<h2>Lista Usuário</h2>
+				</div>
+				<div class="col-sm-6">					
+					<div class="input-group h2">
+						<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Usuário">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="submit">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div>					
+				</div>
+				<div class="col-sm-3">
+					<a href="cadastrar-usuario.html" class="btn btn-primary pull-right h2">Cadastrar Novo Usuário</a>
+				</div>
+			</div> 
+			<!-- /Nav Top -->
+
+			<!--Row Lista-->
+			<div id="list" class="row">
+
+				<div class="table-responsive col-md-12">
+					<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="UsuarioController" data-ng-init="init()">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>Telefone</th>
+								<th>Perfil</th>
+								<th class="actions">Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="usuario in usuarios">
+								<td>{{usuario.id}}</td>
+								<td>{{usuario.nome}}</td>
+								<td>{{usuario.email}}</td>
+								<td>{{usuario.telefone}}</td>
+								<td>{{usuario.perfil}}</td>
+								<td class="actions">
+									<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{usuario.id}}">Visualizar</a>
+									<a class="btn btn-warning btn-xs" href="editar" ng-href="alterar/{{usuario.id}}" >Editar</a>
+									<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(usuario.id)">Excluir</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- /Row Lista-->
+
+			<!-- Rodapé-->
+			<div id="bottom" class="row">
+				<div class="col-md-12">
+					<ul class="pagination">
+						<li class="disabled"><a>&lt; Anterior</a></li>
+						<li class="disabled"><a>1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+					</ul><!-- /.pagination -->
+				</div>
+			</div> 
+			<!-- /Rodapé -->
+
+			<!-- AngularJS e JS -->
+			<script type="text/javascript" src="../resources/js/angular.min.js"></script>
+			<script type="text/javascript" src="../resources/controller/UsuarioController.js"></script>
+			<script type="text/javascript" src="../resources/js/jquery-3.2.1.min.js"></script>
+			<script type="text/javascript" src="../resources/js/bootstrap.min.js"></script>
+	</body>
+</html>
