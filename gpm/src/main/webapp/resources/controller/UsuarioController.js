@@ -125,21 +125,19 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.excluir = function(id){
 		
-		if($window.confirm("Deseja Realmente Excluir esse Registro ???")){
+		var response = $http.post("excluir/" + id);
+		
+		response.success(function(data, status, headers, config){
 			
-			var response = $http['delete']("excluir/+id");
-			response.success(function(data, status, headers, config){
-				
-				$scope.init();
-				
-			});
+			$scope.init();
 			
-			response.error(function(data, status, headers, config){
-				
-				$window.alert(data);
-				
-			});
-		}
+		});
+		
+		response.error(function(data, status, headers, config){
+			
+			$window.alert("teste");
+			
+		});
 	}
 	
 });

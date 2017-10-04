@@ -63,7 +63,7 @@ public class UsuarioController {
 		return usuario;
 	}
 	
-	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.DELETE)
+	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
 	public @ResponseBody Usuario excluir(@PathVariable int id){
 		return this.usuariodao.excluir(id);
 	}

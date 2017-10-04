@@ -30,7 +30,7 @@
 		   <div id="navbar" class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav navbar-right">
 				     <li><a href="#">Início</a></li>
-				     <li><a href="#">Usuário</a></li>
+				     <li><a href="listar">Usuário</a></li>
 				     <li><a href="#">Computador</a></li>
 				     <li><a href="#">Impressora</a></li>
 			    </ul>
@@ -87,7 +87,7 @@
 					<td class="actions">
 						<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{usuario.id}}">Visualizar</a>
 						<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{usuario.id}}" >Editar</a>
-						<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(usuario.id)">Excluir</a>
 					</td>
 				</tr>
 			</tbody>
@@ -110,7 +110,7 @@
  </div> <!-- /#main -->
 
 <!-- Modal -->
-<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+<!-- <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -126,7 +126,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
  <!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
