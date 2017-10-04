@@ -104,7 +104,7 @@
 							<span class='msg-erro msg-rsenha'></span>
 							<div class="form-group">
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
 										required="required" autofocus="autofocus" ng-model="telefone" readonly="readonly" ng-init="telefone='${usuario.telefone}'"/>
@@ -113,7 +113,7 @@
 							<span class='msg-erro msg-telefone'></span>
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="perfil"
 										name="perfil" placeholder="Telefone do Usuário"
 										required="required" autofocus="autofocus" ng-model="perfil" readonly="readonly" ng-init="perfil='${usuario.perfil}'"/>
