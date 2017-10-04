@@ -123,12 +123,11 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 	}
 	
-	$scope.excluir = function(){
+	$scope.excluir = function(id){
 		
-		if($window.confirm("Deseja Realmente Excluir esse Usuário ??? ")){
+		if($window.confirm("Deseja Realmente Excluir esse Registro ???")){
 			
-			var response = $http.post("excluir/", usuario);
-				
+			var response = $http['delete']("excluir/+id");
 			response.success(function(data, status, headers, config){
 				
 				$scope.init();

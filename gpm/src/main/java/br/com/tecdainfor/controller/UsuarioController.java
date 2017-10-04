@@ -63,9 +63,9 @@ public class UsuarioController {
 		return usuario;
 	}
 	
-	@RequestMapping (value = "/excluir", method = RequestMethod.POST)
-	public @ResponseBody Usuario excluir(@RequestBody Usuario usuario){
-		return this.usuariodao.excluir(usuario.getId());
+	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.DELETE)
+	public @ResponseBody Usuario excluir(@PathVariable int id){
+		return this.usuariodao.excluir(id);
 	}
 
 }
