@@ -14,107 +14,107 @@
 		<link href="<c:url value='../resources/css/style.css' />" rel="stylesheet"></link> 
 
 	</head>
-<body>
-
- <nav class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
-		   <div class="navbar-header">
-		    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				     <span class="sr-only">Toggle navigation</span>
-				     <span class="icon-bar"></span>
-				     <span class="icon-bar"></span>
-				     <span class="icon-bar"></span>
-		    	</button>
-		    	<a class="navbar-brand" href="#">Gerenciador Parque Máquinas</a>
-		   </div>
-		   <div id="navbar" class="navbar-collapse collapse">
-			    <ul class="nav navbar-nav navbar-right">
-				     <li><a href="#">Início</a></li>
-				     <li><a href="listar">Usuário</a></li>
-				     <li><a href="#">Computador</a></li>
-				     <li><a href="#">Impressora</a></li>
-			    </ul>
-		   </div>
-	  </div>
- </nav>
-
- <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="UsuarioController">
- 
- 	<div id="top" class="row">
-		<div class="col-sm-3">
-			<h2>Lista Usuário</h2>
-		</div>
-		<div class="col-sm-6">
-			
-			<div class="input-group h2">
-				<input name="nome" class="form-control" id="nome" type="text" placeholder="Pesquisar Usuário" ng-model="nome">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" type="submit" ng-click="buscar()">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
+	<body>
+	
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			   <div class="navbar-header">
+			    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					     <span class="sr-only">Toggle navigation</span>
+					     <span class="icon-bar"></span>
+					     <span class="icon-bar"></span>
+					     <span class="icon-bar"></span>
+			    	</button>
+			    	<a class="navbar-brand" href="#">Gerenciador Parque Máquinas</a>
+			   </div>
+			   <div id="navbar" class="navbar-collapse collapse">
+				    <ul class="nav navbar-nav navbar-right">
+					     <li><a href="#">Início</a></li>
+					     <li><a href="listar">Usuário</a></li>
+					     <li><a href="#">Computador</a></li>
+					     <li><a href="#">Impressora</a></li>
+				    </ul>
+			   </div>
+		  </div>
+	 </nav>
+	
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="UsuarioController">
+	 
+	 	<div id="top" class="row">
+			<div class="col-sm-3">
+				<h2>Lista Usuário</h2>
 			</div>
-			
+			<div class="col-sm-6">
+				
+				<div class="input-group h2">
+					<input name="nome" class="form-control" id="nome" type="text" placeholder="Pesquisar Usuário" ng-model="nome">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="submit" ng-click="buscar()">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+				
+			</div>
+			<div class="col-sm-3">
+				<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Novo Usuário</a>
+			</div>
+		</div> <!-- /#top -->
+	 
+	 
+	 	<hr />
+	 	<div id="list" class="row">
+		
+		<div class="table-responsive col-md-12">
+			<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="UsuarioController" data-ng-init="init()">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Telefone</th>
+						<th>Perfil</th>
+						<th class="actions">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="usuario in usuarios">
+						<td>{{usuario.id}}</td>
+						<td>{{usuario.nome}}</td>
+						<td>{{usuario.email}}</td>
+						<td>{{usuario.telefone}}</td>
+						<td>{{usuario.perfil}}</td>
+						<td class="actions">
+							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{usuario.id}}">Visualizar</a>
+							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{usuario.id}}" >Editar</a>
+							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(usuario.id, usuario.nome)">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<div class="col-sm-3">
-			<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Novo Usuário</a>
-		</div>
-	</div> <!-- /#top -->
- 
- 
- 	<hr />
- 	<div id="list" class="row">
+		
+		</div> <!-- /#list -->
+		
+		<div id="bottom" class="row">
+			<div class="col-md-12">
+				<ul class="pagination">
+					<li class="disabled"><a>&lt; Anterior</a></li>
+					<li class="disabled"><a>1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
+				</ul><!-- /.pagination -->
+			</div>
+		</div> <!-- /#bottom -->
+	 </div> <!-- /#main --> 
 	
-	<div class="table-responsive col-md-12">
-		<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="UsuarioController" data-ng-init="init()">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Nome</th>
-					<th>Email</th>
-					<th>Telefone</th>
-					<th>Perfil</th>
-					<th class="actions">Ações</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="usuario in usuarios">
-					<td>{{usuario.id}}</td>
-					<td>{{usuario.nome}}</td>
-					<td>{{usuario.email}}</td>
-					<td>{{usuario.telefone}}</td>
-					<td>{{usuario.perfil}}</td>
-					<td class="actions">
-						<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{usuario.id}}">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{usuario.id}}" >Editar</a>
-						<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(usuario.id, usuario.nome)">Excluir</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	</div> <!-- /#list -->
-	
-	<div id="bottom" class="row">
-		<div class="col-md-12">
-			<ul class="pagination">
-				<li class="disabled"><a>&lt; Anterior</a></li>
-				<li class="disabled"><a>1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li class="next"><a href="#" rel="next">Próximo &gt;</a></li>
-			</ul><!-- /.pagination -->
-		</div>
-	</div> <!-- /#bottom -->
- </div> <!-- /#main --> 
-
- <!-- AngularJS e JS -->
+	 	<!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
 		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-		<!-- <script src="<c:url value='../resources/js/validador.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.min.js' />"></script> -->
-</body>
+	
+	</body>
+	
 </html>

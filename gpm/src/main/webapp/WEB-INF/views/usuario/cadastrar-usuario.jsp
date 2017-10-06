@@ -48,52 +48,55 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form class="form-horizontal" ng-controller="UsuarioController">
+				<form name="userForm" class="form-horizontal" ng-controller="UsuarioController" >
 					<div class="panel panel-default">
 						<div class="panel-body">
 						
-							<div class="form-group">
+							<div class="form-group" ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }" >
 								<label for="nome" class="col-sm-2 control-label">Nome
 									Completo*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário"
-										autofocus="autofocus" ng-model="nome" required="required"/>
+										autofocus="autofocus" ng-model="nome" required />
+										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block">Nome é Obrigatório.</p>
+										
+										
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
-										autofocus="autofocus" ng-model="email" required="required"/>
+										autofocus="autofocus" ng-model="email" required/>
+										<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Informe um E-mail Válido.</p>
 								</div>
 							</div>
-							<span class='msg-erro msg-nome'></span>
-							
-							<span class='msg-erro msg-email'></span>
-							<div class="form-group">
+
+							<div class="form-group" ng-class="{ 'has-error' : userForm.senha.$invalid && !userForm.senha.$pristine }" >
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="senha"
-										name="senha" placeholder="Senha do Usuário" required="required"
+										name="senha" placeholder="Senha do Usuário" required
 										autofocus="autofocus" ng-model="senha"/>
+										<p ng-show="userForm.senha.$invalid && !userForm.senha.$pristine" class="help-block">Senha é Obrigatório.</p>
 								</div>
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus" ng-model="rsenha" />
+										required autofocus="autofocus" ng-model="rsenha" />
+										<p ng-show="userForm.rsenha.$invalid && !userForm.rsenha.$pristine" class="help-block">Repetir Senha é Obrigatório.</p>
 									</div>
 							</div>
-							<span class='msg-erro msg-senha'></span>
-							
-							<span class='msg-erro msg-rsenha'></span>
-							<div class="form-group">
+
+							<div class="form-group" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
 								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
-										required="required" autofocus="autofocus" ng-model="telefone"/>
+										required autofocus="autofocus" ng-model="telefone"/>
+										<p ng-show="userForm.telefone.$invalid && !userForm.telefone.$pristine" class="help-block">Telefone é Obrigatório.</p>
 								</div>
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-3">
@@ -106,7 +109,7 @@
 							
 							<div class="form-group" align="center">
 								<div class="col-sm-5">
-									<button type="button" class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>
+									<button type="button" class="btn btn-primary" ng-disabled="mainForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
 								</div>
 							</div>
 							
@@ -121,8 +124,6 @@
 		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-		<!-- <script src="<c:url value='../resources/js/validador.js' />"></script>
-		<script src="<c:url value='../resources/js/validador.min.js' />"></script> -->
 			 
 	</body>
 </html>

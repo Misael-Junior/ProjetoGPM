@@ -130,9 +130,7 @@
 		<script src="<c:url value='/resources/controller/UsuarioController.js' />"></script>
 		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
-		<!-- <script src="<c:url value='/resources/js/validador.js' />"></script>
-		<script src="<c:url value='/resources/js/validador.min.js' />"></script> -->
-			 
-		</body>
-	</footer>
+					 
+	</body>
+
 </html>

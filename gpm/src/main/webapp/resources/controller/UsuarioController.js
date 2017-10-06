@@ -32,6 +32,16 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		});	
 	}
 	
+	$scope.submitForm = function(isValid) {
+		 
+		 if (isValid) {
+			 
+			 $scope.cadastrarUsuario();
+			 
+		 }
+		 
+	 }
+	
 	$scope.cadastrarUsuario = function(){
 		
 		if($scope.senha == $scope.rsenha){
@@ -81,45 +91,51 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.alterarUsuario = function(){
 		
-		if($scope.senha == $scope.rsenha){
+		var mensagem = confirm ("Deseja Realmente Alterar o Cadastro de " + $scope.nome + " ??? ");
+		
+		if(mensagem == true){
 			
-			var usuario      = new Object();
-			usuario.id       = $scope.id;
-			usuario.nome     = $scope.nome;
-			usuario.email    = $scope.email;
-			usuario.senha    = $scope.senha;
-			usuario.telefone = $scope.telefone;
-			usuario.perfil   = $scope.perfil;
+			if($scope.senha == $scope.rsenha){
+				
+				var usuario      = new Object();
+				usuario.id       = $scope.id;
+				usuario.nome     = $scope.nome;
+				usuario.email    = $scope.email;
+				usuario.senha    = $scope.senha;
+				usuario.telefone = $scope.telefone;
+				usuario.perfil   = $scope.perfil;
+				
+				var response = $http.post("../alterar", usuario);
+				
+			}else{
+				
+				$window.alert("Senhas não Conferem !!! ");
+				$scope.senha  = null;
+				$scope.rsenha = null;
+				
+			}
 			
-			var response = $http.post("../alterar", usuario);
+			response.success(function(data, status, headers, config){
 			
-		}else{
+				$window.alert("Cadastro de " + data.nome + " Alterado com Sucesso !!!");
+				
+				$scope.id       = null;
+				$scope.nome     = null;
+				$scope.login    = null;
+				$scope.senha    = null;
+				$scope.telefone = null;
+								
+				window.location.href = "../listar";
+				
+			});
 			
-			$window.alert("Senhas não Conferem !!! ");
-			$scope.senha  = null;
-			$scope.rsenha = null;
-			
+			response.error(function(data, status, headers, config){
+				
+				$window.alert("Erro ao Tentar Alterar " + data.nome + data);
+				
+			});
+		
 		}
-		
-		response.success(function(data, status, headers, config){
-		
-			$window.alert("Cadastro de " + data.nome + " Alterado com Sucesso !!!");
-			
-			$scope.id       = null;
-			$scope.nome     = null;
-			$scope.login    = null;
-			$scope.senha    = null;
-			$scope.telefone = null;
-							
-			window.location.href = "../listar";
-			
-		});
-		
-		response.error(function(data, status, headers, config){
-			
-			$window.alert("Erro ao Tentar Alterar " + data.nome + data);
-			
-		});
 		
 	}
 	
