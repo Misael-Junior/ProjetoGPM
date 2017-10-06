@@ -57,14 +57,14 @@
 									Completo*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Nome Completo do Usuário" required="required"
-										autofocus="autofocus" ng-model="nome"/>
+										placeholder="Nome Completo do Usuário"
+										autofocus="autofocus" ng-model="nome" required="required"/>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
 								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
-										autofocus="autofocus" ng-model="email"/>
+										autofocus="autofocus" ng-model="email" required="required"/>
 								</div>
 							</div>
 							<span class='msg-erro msg-nome'></span>

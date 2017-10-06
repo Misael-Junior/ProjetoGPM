@@ -18,7 +18,7 @@ public interface UsuarioDAO {
 	
 	public Usuario consultarUsuarioCodigo(int id);
 	
-	public Usuario consultarUsuarioNome(String nome);
+	public List<Usuario> consultarUsuarioNome(String nome);
 	
 	public Usuario excluir(int id);
 	

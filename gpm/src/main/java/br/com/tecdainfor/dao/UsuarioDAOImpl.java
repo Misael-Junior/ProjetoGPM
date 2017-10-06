@@ -51,10 +51,11 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		return manager.find(Usuario.class, id);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@javax.transaction.Transactional
-	public Usuario consultarUsuarioNome(String nome) {
+	public List<Usuario> consultarUsuarioNome(String nome) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.createQuery(" SELECT u FROM Usuario u WHERE u.nome LIKE ' nome %'").getResultList();
 	}
 	
 	@javax.transaction.Transactional

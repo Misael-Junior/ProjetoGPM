@@ -123,6 +123,19 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 	}
 	
+	$scope.buscar = function(){
+		
+		nome = $scope.nome;
+		
+		var response = $http.post("buscar/" + nome);
+		
+		response.success(function(data, status, headers, config){
+			
+			$scope.usuarios = data;
+			
+		});
+	}
+	
 	$scope.excluir = function(id){
 		
 		var response = $http.post("excluir/" + id);
