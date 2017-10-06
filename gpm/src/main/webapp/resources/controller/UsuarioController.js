@@ -27,7 +27,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert(data);
+			$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
 			
 		});	
 	}
@@ -68,13 +68,13 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 				
 			}else{
 				
-				$window.alert("Erro ao Tentar Cadastrar. Campos Obrigatórios estão Vazios !!!");
+				$window.alert("Erro ao Tentar Cadastrar" + data.nome);
 			}			
 		});
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert(data);
+			$window.alert("Erro ao Tentar Alterar " + data.nome + data);
 			
 		});
 	}
@@ -117,7 +117,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert(data);
+			$window.alert("Erro ao Tentar Alterar " + data.nome + data);
 			
 		});
 		
@@ -136,21 +136,29 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		});
 	}
 	
-	$scope.excluir = function(id){
+	$scope.excluir = function(id, nome){
 		
-		var response = $http.post("excluir/" + id);
+		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro de " + nome + " ??? ");
 		
-		response.success(function(data, status, headers, config){
+		if(mensagem == true){
 			
-			$scope.init();
+			var response = $http.post("excluir/" + id);
 			
-		});
+			response.success(function(data, status, headers, config){
+				
+				$scope.init();
+				
+				$window.alert("Cadastro de " + data.nome + " Excluido com Sucesso !!!");
+				
+			});
+			
+			response.error(function(data, status, headers, config){
+				
+				$window.alert("Erro ao Tentar Excluir " + data.nome + data);
+				
+			});
+		}	
 		
-		response.error(function(data, status, headers, config){
-			
-			$window.alert("teste");
-			
-		});
 	}
 	
 });

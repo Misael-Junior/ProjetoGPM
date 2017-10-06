@@ -55,7 +55,7 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	@javax.transaction.Transactional
 	public List<Usuario> consultarUsuarioNome(String nome) {
 		// TODO Auto-generated method stub
-		return manager.createQuery(" SELECT u FROM Usuario u WHERE u.nome LIKE ' nome %'").getResultList();
+		return manager.createQuery(" SELECT u FROM Usuario u WHERE u.nome = nome ").getResultList();
 	}
 	
 	@javax.transaction.Transactional
