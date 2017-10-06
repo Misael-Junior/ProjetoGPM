@@ -67,21 +67,20 @@
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Nome
 									Completo*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário" required="required"
 										autofocus="autofocus" ng-model="nome" ng-init="nome='${usuario.nome}'"/>
 								</div>
-							</div>
-							<span class='msg-erro msg-nome'></span>
-							<div class="form-group">
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
 										autofocus="autofocus" ng-model="email" ng-init="email='${usuario.email}'"/>
 								</div>
 							</div>
+							<span class='msg-erro msg-nome'></span>
+							
 							<span class='msg-erro msg-email'></span>
 							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
@@ -90,9 +89,6 @@
 										name="senha" placeholder="Senha do Usuário" required="required"
 										autofocus="autofocus" ng-model="senha" ng-init="senha='${usuario.senha}'"/>
 								</div>
-							</div>
-							<span class='msg-erro msg-senha'></span>
-							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
 								<div class="col-sm-3">
@@ -101,25 +97,26 @@
 										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="rsenha='${usuario.senha}'"/>
 									</div>
 							</div>
+							<span class='msg-erro msg-senha'></span>
+							
 							<span class='msg-erro msg-rsenha'></span>
 							<div class="form-group">
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-2">
+								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
 										required="required" autofocus="autofocus" ng-model="telefone" ng-init="telefone='${usuario.telefone}'"/>
 								</div>
-							</div>
-							<span class='msg-erro msg-telefone'></span>
-							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-3">
 									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='${usuario.perfil}'">
 										<option valeu="padrao">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>
 								</div>
 							</div>
+							<span class='msg-erro msg-telefone'></span>
+							
 							<span class='msg-erro msg-perfil'></span>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">

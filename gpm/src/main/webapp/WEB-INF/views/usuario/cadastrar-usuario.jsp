@@ -51,24 +51,24 @@
 				<form class="form-horizontal" ng-controller="UsuarioController">
 					<div class="panel panel-default">
 						<div class="panel-body">
+						
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Nome
 									Completo*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário" required="required"
 										autofocus="autofocus" ng-model="nome"/>
 								</div>
-							</div>
-							<span class='msg-erro msg-nome'></span>
-							<div class="form-group">
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
 										autofocus="autofocus" ng-model="email"/>
 								</div>
 							</div>
+							<span class='msg-erro msg-nome'></span>
+							
 							<span class='msg-erro msg-email'></span>
 							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
@@ -77,9 +77,6 @@
 										name="senha" placeholder="Senha do Usuário" required="required"
 										autofocus="autofocus" ng-model="senha"/>
 								</div>
-							</div>
-							<span class='msg-erro msg-senha'></span>
-							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
 								<div class="col-sm-3">
@@ -88,29 +85,31 @@
 										required="required" autofocus="autofocus" ng-model="rsenha" />
 									</div>
 							</div>
+							<span class='msg-erro msg-senha'></span>
+							
 							<span class='msg-erro msg-rsenha'></span>
 							<div class="form-group">
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-2">
+								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
 										required="required" autofocus="autofocus" ng-model="telefone"/>
 								</div>
-							</div>
-							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-3">
 									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
 										<option valeu="Padrão" ng-selected="true">Padrão</option>
 										<option valeu="Admin">Admin</option>
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
+							
+							<div class="form-group" align="center">
+								<div class="col-sm-5">
 									<button type="button" class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>
 								</div>
 							</div>
+							
 						</div>
 					</div>
 				</form>
