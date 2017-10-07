@@ -36,9 +36,9 @@ public class MonitorDAOImpl implements MonitorDAO {
 	}
 	
 	@javax.transaction.Transactional
-	public Monitor consultarMonitorTomb(String nome) {
+	public List<Monitor> consultarMonitorTomb(String nome) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.createQuery(" SELECT u FROM Monitor u WHERE u.montomb = nome ").getResultList();
 	}
 	
 	@javax.transaction.Transactional
@@ -57,11 +57,6 @@ public class MonitorDAOImpl implements MonitorDAO {
 
 
 
-	@Override
-	public Monitor cadastrarUsuario(Monitor usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
 

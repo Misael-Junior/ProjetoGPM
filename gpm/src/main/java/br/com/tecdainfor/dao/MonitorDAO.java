@@ -6,13 +6,13 @@ import br.com.tecdainfor.model.Monitor;
 
 public interface MonitorDAO {
 
-    public Monitor cadastrarUsuario(Monitor usuario);
+    public Monitor cadastrarMonitor(Monitor monitor);
 		
 	public Monitor alterarMonitor(Monitor monitor);
 	
 	public Monitor consultarMonitorCodigo(int id);
 	
-	public Monitor consultarMonitorTomb(String tomb);
+	public List<Monitor> consultarMonitorTomb(String tomb);
 	
 	public Monitor excluir(int id);
 	
