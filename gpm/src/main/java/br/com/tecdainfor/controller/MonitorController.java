@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.MonitorDAO;
 import br.com.tecdainfor.model.Monitor;
-import br.com.tecdainfor.model.Usuario;
+
 
 @Controller
 @RequestMapping("/monitor")
@@ -27,7 +27,7 @@ public class MonitorController {
 	
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ModelAndView listar(){
-		return new ModelAndView("monitor/listar-monitores");
+		return new ModelAndView("monitor/listar-monitor");
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
