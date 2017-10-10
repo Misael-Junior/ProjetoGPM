@@ -38,7 +38,7 @@
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="UsuarioController">
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="MonitorController">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">
@@ -47,7 +47,7 @@
 			<div class="col-sm-6">
 				
 				<div class="input-group h2">
-					<input name="tomb" class="form-control" id="tomb" type="text" placeholder="Pesquisar Monitor" ng-model="tomb">
+					<input name="montomb" class="form-control" id="montomb" type="text" placeholder="Pesquisar Monitor" ng-model="montomb">
 					<span class="input-group-btn">
 						<button class="btn btn-primary" type="submit" ng-click="buscar()">
 							<span3 class="glyphicon glyphicon-search"></span>
@@ -82,6 +82,7 @@
 						<td>{{monitor.id}}</td>
 						<td>{{monitor.marca}}</td>
 						<td>{{monitor.modelo}}</td>
+						<td>{{monitor.montomb}}</td>
 						<td>{{monitor.descricao}}</td>
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{monitor.id}}">Visualizar</a>
@@ -110,7 +111,7 @@
 	
 	 	<!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='../resources/controller/MonitorController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
 	

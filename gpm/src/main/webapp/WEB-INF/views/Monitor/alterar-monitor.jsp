@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="UsuarioControllerApp" >
+<html ng-app="MonitorControllerApp" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>GPM | EDITAR CADASTRO DE MONITOR</title>
+		<title>GPM | EDITAR CADASTRO DE MONITOR.</title>
 		
 		<!-- CSS -->
 		<link href="<c:url value='/resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
@@ -52,7 +52,7 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form class="form-horizontal" ng-controller="UsuarioController">
+				<form class="form-horizontal" ng-controller="MonitorController">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="form-group">
@@ -69,7 +69,7 @@
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="marca" name="marca"
 										placeholder="Marca do monitor"
-										autofocus="autofocus" ng-model="marca" required />
+										autofocus="autofocus" ng-model="marca" required ng-init="marca='${monitor.marca}'"/>
 										<p ng-show="userForm.marca.$invalid && !userForm.marca.$pristine" class="help-block">Marca é Obrigatória</p>
 										
 										
@@ -78,7 +78,7 @@
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
 									<input type="modelo" class="form-control" id="modelo" name="modelo"
 										placeholder="Modelo do monitor" required="required"
-										autofocus="autofocus" ng-model="modelo" required/>
+										autofocus="autofocus" ng-model="modelo" required ng-init="modelo='${monitor.modelo}'"/>
 										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block">Informe o modelo do monitor.</p>
 								</div>
 							</div>
@@ -86,16 +86,16 @@
 							<div class="form-group" ng-class="{ 'has-error' : userForm.tomb.$invalid && !userForm.tomb.$pristine }" >
 								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="tomb"
-										name="tomb" placeholder="Tombamento(Patrimônio)" required
-										autofocus="autofocus" ng-model="tomb"/>
-										<p ng-show="userForm.tomb.$invalid && !userForm.tomb.$pristine" class="help-block">Informe o número do tombamento.</p>
+									<input type="text" class="form-control" id="montomb"
+										name="montomb" placeholder="Tombamento(Patrimônio)" required
+										autofocus="autofocus" ng-model="montomb" ng-init="montomb='${monitor.montomb}'"/>
+										<p ng-show="userForm.montomb.$invalid && !userForm.montomb.$pristine" class="help-block">Informe o número do tombamento.</p>
 								</div>
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
 									<input type="text" class="form-control" id="descricao"
 										name="descricao" placeholder="Escreva uma descrição"
-										required autofocus="autofocus" ng-model="descricao" />
+										required autofocus="autofocus" ng-model="descricao" ng-init="descricao='${monitor.descricao}'" />
 										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe uma descrição</p>
 									</div>
 							</div>
@@ -104,7 +104,7 @@
 							<span class='msg-erro msg-perfil'></span>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
-									<button type="button" class="btn btn-primary" ng-click="alterarUsuario()">Alterar Cadastro</button>
+									<button type="button" class="btn btn-primary" ng-click="alterarMonitor()">Alterar Cadastro</button>
 								</div>
 							</div>
 						</div>
@@ -112,10 +112,10 @@
 				</form>
 			</div>
 		</section>
-			
+		 
 		<!-- AngularJS e JS -->
 		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='/resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='/resources/controller/MonitorController.js' />"></script>
 		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 			 

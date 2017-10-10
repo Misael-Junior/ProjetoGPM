@@ -71,13 +71,13 @@
 								</div>
 							</div>
 
-							<div class="form-group" ng-class="{ 'has-error' : userForm.tomb.$invalid && !userForm.tomb.$pristine }" >
-								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>
+							<div class="form-group" ng-class="{ 'has-error' : userForm.montomb.$invalid && !userForm.montomb.$pristine }" >
+								<label for="montomb" class="col-sm-2 control-label">Tombamento*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="tomb"
-										name="tomb" placeholder="Tombamento(Patrimônio)" required
-										autofocus="autofocus" ng-model="tomb"/>
-										<p ng-show="userForm.tomb.$invalid && !userForm.tomb.$pristine" class="help-block">Informe o número do tombamento.</p>
+									<input type="text" class="form-control" id="montomb"
+										name="montomb" placeholder="Tombamento(Patrimônio)" required
+										autofocus="autofocus" ng-model="montomb"/>
+										<p ng-show="userForm.montomb.$invalid && !userForm.montomb.$pristine" class="help-block">Informe o número do tombamento.</p>
 								</div>
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
@@ -103,7 +103,7 @@
 		
 		<!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='../resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='../resources/controller/MonitorController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
 			 

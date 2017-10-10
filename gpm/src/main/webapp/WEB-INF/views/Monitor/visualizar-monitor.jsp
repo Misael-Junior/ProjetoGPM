@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="UsuarioControllerApp" >
+<html ng-app="MonitorControllerApp" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,73 +52,54 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form class="form-horizontal" ng-controller="UsuarioController">
+				<form class="form-horizontal" ng-controller="MonitorController">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="form-group">
-								<label for="nome" class="col-sm-2 control-label">Codigo
+								<label for="codigo" class="col-sm-2 control-label">Codigo
 								*</label>
 								<div class="col-sm-2">
 									<input type="text" class="form-control" id="id" name="id"
-										placeholder="Código do Usuário" required="required"
-										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${usuario.id}'"/>
+										placeholder="Código do Monitor" required="required"
+										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${monitor.id}'"/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="nome" class="col-sm-2 control-label">Nome
-									Completo*</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Nome Completo do Usuário" required="required"
-										autofocus="autofocus" ng-model="nome" readonly="readonly" ng-init="nome='${usuario.nome}'"/>
-								</div>
-							</div>
-							<span class='msg-erro msg-nome'></span>
-							<div class="form-group">
-								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-4">
-									<input type="email" class="form-control" id="email" name="email"
-										placeholder="Email do Usuário" required="required"
-										autofocus="autofocus" ng-model="email" readonly="readonly" ng-init="email='${usuario.email}'"/>
-								</div>
-							</div>
-							<span class='msg-erro msg-email'></span>
-							<div class="form-group">
-								<label for="ip" class="col-sm-2 control-label">Senha*</label>
+									<label for="marca" class="col-sm-2 control-label">Marca*</label>
 								<div class="col-sm-3">
-									<input type="password" class="form-control" id="senha"
-										name="senha" placeholder="Senha do Usuário" required="required"
-										autofocus="autofocus" ng-model="senha" readonly="readonly" ng-init="senha='${usuario.senha}'"/>
+									<input type="text" class="form-control" id="marca" name="marca"
+										placeholder="Marca do monitor"
+										autofocus="autofocus" ng-model="marca"  readonly="readonly" required ng-init="marca='${monitor.marca}'"/>
+										<p ng-show="userForm.marca.$invalid && !userForm.marca.$pristine" class="help-block">Marca é Obrigatória</p>
+										
+										
+								</div>
+								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
+								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
+									<input type="modelo" class="form-control" id="modelo" name="modelo"
+										placeholder="Modelo do monitor" required="required"
+										autofocus="autofocus" ng-model="modelo"  readonly="readonly" required ng-init="modelo='${monitor.modelo}'"/>
+										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block">Informe o modelo do monitor.</p>
 								</div>
 							</div>
-							<span class='msg-erro msg-senha'></span>
-							<div class="form-group">
-								<label for="ip" class="col-sm-2 control-label">Repetir
-									Senha*</label>
+
+							<div class="form-group" ng-class="{ 'has-error' : userForm.tomb.$invalid && !userForm.tomb.$pristine }" >
+								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>
 								<div class="col-sm-3">
-									<input type="password" class="form-control" id="rsenha"
-										name="rsenha" placeholder="Senha do Usuário"
-										required="required" autofocus="autofocus" ng-model="rsenha" readonly="readonly" ng-init="rsenha='${usuario.senha}'"/>
+									<input type="text" class="form-control" id="montomb"
+										name="montomb" placeholder="Tombamento(Patrimônio)" required
+										autofocus="autofocus" ng-model="montomb"  readonly="readonly" ng-init="montomb='${monitor.montomb}'"/>
+										<p ng-show="userForm.montomb.$invalid && !userForm.montomb.$pristine" class="help-block">Informe o número do tombamento.</p>
+								</div>
+								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
+								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
+									<input type="text" class="form-control" id="descricao"
+										name="descricao" placeholder="Escreva uma descrição"
+										required autofocus="autofocus" ng-model="descricao"  readonly="readonly"  ng-init="descricao='${monitor.descricao}'" />
+										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe uma descrição</p>
 									</div>
 							</div>
-							<span class='msg-erro msg-rsenha'></span>
-							<div class="form-group">
-								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-2">
-									<input type="telefone" class="form-control" id="telefone"
-										name="telefone" placeholder="Telefone do Usuário"
-										required="required" autofocus="autofocus" ng-model="telefone" readonly="readonly" ng-init="telefone='${usuario.telefone}'"/>
-								</div>
-							</div>
-							<span class='msg-erro msg-telefone'></span>
-							<div class="form-group">
-								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-2">
-									<input type="text" class="form-control" id="perfil"
-										name="perfil" placeholder="Telefone do Usuário"
-										required="required" autofocus="autofocus" ng-model="perfil" readonly="readonly" ng-init="perfil='${usuario.perfil}'"/>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</form>
@@ -127,7 +108,7 @@
 			
 		<!-- AngularJS e JS -->
 		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='/resources/controller/UsuarioController.js' />"></script>
+		<script src="<c:url value='/resources/controller/MonitorController.js' />"></script>
 		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 					 
