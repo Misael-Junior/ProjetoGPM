@@ -32,14 +32,18 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		});	
 	}
 	
+	/* Válidar formulário antes de cadastrar */	
 	$scope.submitForm = function(isValid) {
 		 
 		 if (isValid) {
 			 
 			 $scope.cadastrarUsuario();
 			 
+		 }else{
+			 
+			 $window.alert("Preencha Campos Obrigatórios !!! ");
 		 }
-		 
+		 	 
 	 }
 	
 	$scope.cadastrarUsuario = function(){
