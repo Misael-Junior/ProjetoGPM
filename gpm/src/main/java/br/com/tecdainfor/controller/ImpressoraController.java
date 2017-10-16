@@ -1,10 +1,14 @@
 package br.com.tecdainfor.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ImpressoraDAO;
@@ -45,5 +49,32 @@ public class ImpressoraController {
 	}
 	
 	//Recebimento e tratamento dos dados via HTTP.
+	
+	@RequestMapping(value = "/lista", method= RequestMethod.GET)
+	public @ResponseBody List<Impressora> ConsultarTodos(){
+		return 	this.impressoradao.listarImpressoras();
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	public @ResponseBody Impressora salvar(@RequestBody Impressora impressora) {
+		return this.impressoradao.cadastrarImpressora(impressora);				
+	}
+	
+	@RequestMapping(value = "/alterar", method = RequestMethod.POST)
+	public @ResponseBody Impressora editar(@RequestBody Impressora impressora){
+		impressoradao.alterarImpressora(impressora);
+		return impressora;
+	}
+	
+	@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
+	public @ResponseBody List<Impressora> consultarImpressora(@PathVariable String nome){
+		return this.impressoradao.listarImpSetor(nome);
+	}
+	
+	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
+	public @ResponseBody Impressora excluir(@PathVariable int id){
+		return this.impressoradao.excluir(id);
+	}
+
 	
 }

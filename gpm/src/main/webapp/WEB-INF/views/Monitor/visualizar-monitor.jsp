@@ -48,7 +48,7 @@
 			<div class="panel panel-computador panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title panel-title-computador">Visualizar Cadastro de
-						Usuário</h3>
+						Monitor</h3>
 				</div>
 				
 				<!-- Formulário -->

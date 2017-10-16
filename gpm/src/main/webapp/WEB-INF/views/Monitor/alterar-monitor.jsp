@@ -99,9 +99,7 @@
 										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe uma descrição</p>
 									</div>
 							</div>
-							<span class='msg-erro msg-telefone'></span>
 							
-							<span class='msg-erro msg-perfil'></span>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<button type="button" class="btn btn-primary" ng-click="alterarMonitor()">Alterar Cadastro</button>
