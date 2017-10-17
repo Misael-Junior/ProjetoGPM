@@ -2,7 +2,6 @@ package br.com.tecdainfor.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,15 +11,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ImpressoraDAO;
+import br.com.tecdainfor.dao.ImpressoraDAOImpl;
 import br.com.tecdainfor.model.Impressora;
-import br.com.tecdainfor.model.Monitor;
 
 @Controller
 @RequestMapping("/impressora")
 public class ImpressoraController {
-
-	@Autowired
-	ImpressoraDAO impressoradao;
+	
+	//@Autowired
+	ImpressoraDAO impressoradao = new ImpressoraDAOImpl();
 	
 	// Mapeamento das telas
 	

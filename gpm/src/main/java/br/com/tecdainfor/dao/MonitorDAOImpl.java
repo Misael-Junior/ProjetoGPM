@@ -35,6 +35,7 @@ public class MonitorDAOImpl implements MonitorDAO {
 		return manager.find(Monitor.class, id);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@javax.transaction.Transactional
 	public List<Monitor> consultarMonitorTomb(String nome) {
 		// TODO Auto-generated method stub
