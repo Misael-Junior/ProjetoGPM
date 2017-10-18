@@ -50,7 +50,5 @@ public class ImpressoraDAOImpl implements  ImpressoraDAO{
 	public List<Impressora> listarImpressoras(){
 		return manager.createQuery("SELECT u FROM Impressora u ORDER BY u.setor", Impressora.class).getResultList();
 	}
-
-
 	
 }

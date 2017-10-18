@@ -2,6 +2,7 @@ package br.com.tecdainfor.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,40 +12,37 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ImpressoraDAO;
-import br.com.tecdainfor.dao.ImpressoraDAOImpl;
 import br.com.tecdainfor.model.Impressora;
 
 @Controller
 @RequestMapping("/impressora")
 public class ImpressoraController {
 	
-	//@Autowired
-	ImpressoraDAO impressoradao = new ImpressoraDAOImpl();
+	@Autowired
+	ImpressoraDAO impressoradao;
 	
-	// Mapeamento das telas
+	//Mapeamento das telas
 	
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ModelAndView listar(){
-		return new ModelAndView("impressora/listar-impressora");
-		
+		return new ModelAndView("usuario/listar-impressora");
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
-	public ModelAndView cadastrar(){
-		return new ModelAndView("impressora/cadastrar-impressora");
-		
+	public ModelAndView Cadastrar(){
+		return new ModelAndView("usuario/cadastrar-impressora");
 	}
-	
-	@RequestMapping(value = "/alterar{id}", method = RequestMethod.GET)
-	public ModelAndView alterar(@PathVariable int id){
+		
+	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
+	public ModelAndView Alterar(@PathVariable int id){
 		Impressora impressora = impressoradao.consultarImpressora(id);
-		 return new ModelAndView("impressora/alterar-impressora", "impressora", impressora);
+		return new ModelAndView("usuario/alterar-impressora", "impressora", impressora);
 	}
 	
 	@RequestMapping(value = "/visualizar/{id}", method = RequestMethod.GET)
 	public ModelAndView Visualizar(@PathVariable int id){
-		Impressora impressora  = impressoradao.consultarImpressora(id);
-		return new ModelAndView("impressora/visualizar-impressora", "impressora", impressora);
+		Impressora impressora = impressoradao.consultarImpressora(id);
+		return new ModelAndView("usuario/visualizar-impressora", "impressora", impressora);
 	}
 	
 	//Recebimento e tratamento dos dados via HTTP.
@@ -65,15 +63,14 @@ public class ImpressoraController {
 		return impressora;
 	}
 	
-	@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
-	public @ResponseBody List<Impressora> consultarImpressora(@PathVariable String nome){
-		return this.impressoradao.listarImpSetor(nome);
-	}
+	/*@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
+	public @ResponseBody List<Impressora> consultarImpressoraNome(@PathVariable String nome){
+		return this.impressoradao.c
+	}*/
 	
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
 	public @ResponseBody Impressora excluir(@PathVariable int id){
 		return this.impressoradao.excluir(id);
 	}
-
 	
 }

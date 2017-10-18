@@ -61,11 +61,4 @@ public class Monitor {
 		this.descricao = descricao;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
 }
