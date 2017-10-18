@@ -32,7 +32,7 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						     <li><a href="../painel">Início</a></li>
+						     <li><a href="../views/painel">Início</a></li>
 						     <li><a href="../listar">Usuário</a></li>
 						     <li><a href="../computador/listar">Computador</a></li>
 						     <li><a href="../monitor/listar">Monitor</a></li>

@@ -5,7 +5,7 @@
 <html>
 	<head>
 	<meta charset="utf-8" />
-	<title>GPM | LOGIN</title>
+	<title>GPM | INÍCIO</title>
 	
 	<!-- CSS -->
 	<link href="<c:url value='/resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
