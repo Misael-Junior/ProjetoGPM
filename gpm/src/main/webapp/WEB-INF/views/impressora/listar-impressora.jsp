@@ -29,10 +29,11 @@
 			   </div>
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
-					     <li><a href="#">Início</a></li>
-					     <li><a href="listar">Usuário</a></li>
-					     <li><a href="#">Computador</a></li>
-					     <li><a href="#">Impressora</a></li>
+					      <li><a href="painel.jsp">Início</a></li>
+						  <li><a href="../usuario/listar">Usuário</a></li>
+						  <li><a href="../computador/listar">Computador</a></li>
+						  <li><a href="../monitor/listar">Monitor</a></li>
+						  <li><a href="../impressora/listar">Impressora</a></li>
 				    </ul>
 			   </div>
 		  </div>

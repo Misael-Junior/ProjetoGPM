@@ -25,24 +25,24 @@ public class ImpressoraController {
 	
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public ModelAndView listar(){
-		return new ModelAndView("usuario/listar-impressora");
+		return new ModelAndView("impressora/listar-impressora");
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
 	public ModelAndView Cadastrar(){
-		return new ModelAndView("usuario/cadastrar-impressora");
+		return new ModelAndView("impressora/cadastrar-impressora");
 	}
 		
 	@RequestMapping(value = "/alterar/{id}", method = RequestMethod.GET)
 	public ModelAndView Alterar(@PathVariable int id){
 		Impressora impressora = impressoradao.consultarImpressora(id);
-		return new ModelAndView("usuario/alterar-impressora", "impressora", impressora);
+		return new ModelAndView("impressora/alterar-impressora", "impressora", impressora);
 	}
 	
 	@RequestMapping(value = "/visualizar/{id}", method = RequestMethod.GET)
 	public ModelAndView Visualizar(@PathVariable int id){
 		Impressora impressora = impressoradao.consultarImpressora(id);
-		return new ModelAndView("usuario/visualizar-impressora", "impressora", impressora);
+		return new ModelAndView("impressora/visualizar-impressora", "impressora", impressora);
 	}
 	
 	//Recebimento e tratamento dos dados via HTTP.
