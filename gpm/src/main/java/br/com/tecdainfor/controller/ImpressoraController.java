@@ -63,10 +63,10 @@ public class ImpressoraController {
 		return impressora;
 	}
 	
-	/*@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
+	@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
 	public @ResponseBody List<Impressora> consultarImpressoraNome(@PathVariable String nome){
-		return this.impressoradao.c
-	}*/
+		return this.impressoradao.listarImpSetor(nome);
+	}
 	
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
 	public @ResponseBody Impressora excluir(@PathVariable int id){

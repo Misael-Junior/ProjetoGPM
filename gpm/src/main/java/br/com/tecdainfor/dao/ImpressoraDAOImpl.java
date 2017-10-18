@@ -6,8 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
+import org.springframework.stereotype.Repository;
+
 import br.com.tecdainfor.model.Impressora;
 
+@Repository
 public class ImpressoraDAOImpl implements  ImpressoraDAO{
 
 	
