@@ -64,7 +64,8 @@ public class UsuarioController {
 	
 	@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
 	public @ResponseBody List<Usuario> consultarUsuarioNome(@PathVariable String nome){
-		return this.usuariodao.consultarUsuarioNome(nome);
+		List<Usuario> usuario = usuariodao.consultarUsuarioNome(nome);
+		return usuario;
 	}
 	
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)

@@ -50,11 +50,15 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		// TODO Auto-generated method stub
 		return manager.find(Usuario.class, id);
 	}
-	
+
 	@javax.transaction.Transactional
 	public List<Usuario> consultarUsuarioNome(String nome) {
 		// TODO Auto-generated method stub
-		return manager.createQuery("SELECT u FROM Usuario u WHERE u.nome LIKE '%nome%'", Usuario.class).getResultList();
+		//return manager.createQuery("SELECT u FROM Usuario u WHERE st_nome LIKE '"+ nome +"'", Usuario.class).getResultList();
+		@SuppressWarnings("unchecked")
+		List<Usuario> usuario = manager.createQuery("SELECT u FROM Usuario u WHERE u.nome LIKE '" + nome + "%'").getResultList();		
+		return usuario;
+	
 	}
 	
 	@javax.transaction.Transactional

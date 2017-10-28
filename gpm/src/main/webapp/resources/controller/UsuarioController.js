@@ -32,6 +32,21 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		});	
 	}
 	
+	$scope.buscar = function(){
+		
+		$scope.usuarios = new Array();
+	
+		nome = $scope.nome;
+		
+		var response = $http.post("buscar/" + nome);
+		
+		response.success(function(data, status, headers, config){
+			
+			$scope.usuarios = data;
+			
+		});
+	}
+	
 	/* Válidar formulário antes de cadastrar */	
 	$scope.submitForm = function(isValid) {
 		 
@@ -141,21 +156,6 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 		}
 		
-	}
-	
-	$scope.buscar = function(){
-		
-		//$scope.usuarios = new Array();
-		
-		nome = $scope.nome;
-		
-		var response = $http.post("buscar/" + nome);
-		
-		response.success(function(data, status, headers, config){
-			
-			$scope.usuarios = data;
-			
-		});
 	}
 	
 	$scope.excluir = function(id, nome){
