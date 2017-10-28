@@ -51,11 +51,10 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 		return manager.find(Usuario.class, id);
 	}
 	
-	@SuppressWarnings("unchecked")
 	@javax.transaction.Transactional
 	public List<Usuario> consultarUsuarioNome(String nome) {
 		// TODO Auto-generated method stub
-		return manager.createQuery(" SELECT u FROM Usuario u WHERE u.nome = nome ").getResultList();
+		return manager.createQuery("SELECT u FROM Usuario u WHERE u.nome LIKE '%nome%'", Usuario.class).getResultList();
 	}
 	
 	@javax.transaction.Transactional
@@ -68,7 +67,29 @@ public class UsuarioDAOImpl implements UsuarioDAO{
 	
 	@javax.transaction.Transactional
 	public List<Usuario> listarUsuarios(){
+		// TODO Auto-generated method stub
 		return manager.createQuery("SELECT u FROM Usuario u ORDER BY u.nome", Usuario.class).getResultList();
+	}
+
+	@Override
+	public List<Usuario> consultaPagina(String numeroPagina) {
+		// TODO Auto-generated method stub
+		int total_por_pagina = 6;
+		if (numeroPagina == null || (numeroPagina != null && numeroPagina.trim().isEmpty())){
+			numeroPagina = "0";
+		}
+		int offSet = (Integer.parseInt(numeroPagina) * total_por_pagina) - total_por_pagina; 
+		
+		if (offSet < 0){
+			offSet = 0;
+		}
+		
+		/*Criteria criteria = getSessionFactory().getCurrentSession().createCriteria(getPersistenceClass());
+		criteria.setFirstResult(offSet);
+		criteria.setMaxResults(total_por_pagina);
+		criteria.addOrder(Order.asc("id"));*/
+
+		return null;
 	}
 
 }

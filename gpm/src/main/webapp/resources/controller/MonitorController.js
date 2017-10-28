@@ -6,11 +6,11 @@ var MonitorControllerApp = angular.module("MonitorControllerApp",[]);
 
 MonitorControllerApp.controller("MonitorController", function($scope, $window, $http){
 	
-	$scope.id       = null;
+	$scope.id        = null;
 	$scope.marca     = null;
 	$scope.modelo    = null;
-	$scope.montomb    = null;
-	$scope.descricao   = null;
+	$scope.montomb   = null;
+	$scope.descricao = null;
 	
 	
 	$scope.init = function(){
@@ -27,7 +27,7 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
+			$window.alert("Erro ao Tentar Listar. Verifique Sua Conexão com o Banco " + data);
 			
 		});	
 	}
@@ -45,10 +45,10 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 	$scope.cadastrarMonitor = function(){
 		
 	
-			var monitor      = new Object();
+			var monitor       = new Object();
 			monitor.marca     = $scope.marca;
 			monitor.modelo    = $scope.modelo;
-			monitor.montomb    = $scope.montomb;
+			monitor.montomb   = $scope.montomb;
 			monitor.descricao = $scope.descricao;
 			
 			
@@ -60,12 +60,12 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 			
 			if(data.montomb != null){
 				
-				$window.alert("Cadastro de monitor realizado com Sucesso !!!");
+				$window.alert("Cadastro de Monitor com Tombamento " + monitor.montomb + " realizado com Sucesso !!! ");
 				
-				$scope.marca     = null;
-				$scope.modelo    = null;
+				$scope.marca      = null;
+				$scope.modelo     = null;
 				$scope.montomb    = null;
-				$scope.descricao   = null;
+				$scope.descricao  = null;
 			
 				
 				window.location.href = "listar";
@@ -85,16 +85,17 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 	
 	$scope.alterarMonitor = function(){
 		
-		var mensagem = confirm ("Deseja Realmente Alterar o Cadastro ??? ");
+		var mensagem = confirm ("Deseja Realmente Alterar Cadastro de Monitor com Tombamento " + monitor.montomb + " ??? ");
 		
 		if(mensagem == true){
 			
 			
 				
-			var monitor      = new Object();
+			var monitor       = new Object();
+			monitor.id        = $scope.id;
 			monitor.marca     = $scope.marca;
 			monitor.modelo    = $scope.modelo;
-			monitor.montomb    = $scope.montomb;
+			monitor.montomb   = $scope.montomb;
 			monitor.descricao = $scope.descricao;
 				
 				var response = $http.post("../alterar", monitor);
@@ -103,12 +104,12 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 			
 			response.success(function(data, status, headers, config){
 			
-				$window.alert("Cadastro de Alterado com Sucesso !!!");
+				$window.alert("Cadastro de Monitor com Tombamento " + monitor.montomb + " Alterado com Sucesso !!!");
 				
-				$scope.id       = null;
+				$scope.id        = null;
 				$scope.marca     = null;
 				$scope.modelo    = null;
-				$scope.montomb    = null;
+				$scope.montomb   = null;
 				$scope.descricao = null;
 								
 				window.location.href = "../listar";
@@ -140,7 +141,7 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 	
 	$scope.excluir = function(id, marca){
 		
-		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro??? ");
+		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro de Monitor com Tombamento " + monitor.montomb + " ??? ");
 		
 		if(mensagem == true){
 			
@@ -150,7 +151,7 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 				
 				$scope.init();
 				
-				$window.alert("Cadastro de excluido com Sucesso !!!");
+				$window.alert("Cadastro de Monitor com Tombamento " + monitor.montomb + " excluido com Sucesso !!!");
 				
 			});
 			

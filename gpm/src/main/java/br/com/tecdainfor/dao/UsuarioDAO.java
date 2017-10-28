@@ -23,5 +23,7 @@ public interface UsuarioDAO {
 	public Usuario excluir(int id);
 	
 	public List<Usuario> listarUsuarios();
+	
+	public List<Usuario> consultaPagina(String numeroPagina);
 
 }

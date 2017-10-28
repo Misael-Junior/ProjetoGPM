@@ -145,6 +145,8 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.buscar = function(){
 		
+		//$scope.usuarios = new Array();
+		
 		nome = $scope.nome;
 		
 		var response = $http.post("buscar/" + nome);

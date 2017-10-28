@@ -70,7 +70,7 @@
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="marca" name="marca"
 										placeholder="Marca do monitor"
-										autofocus="autofocus" ng-model="marca" required ng-init="marca='${monitor.marca}'"/>
+										autofocus="autofocus" ng-model="marca" required="required" ng-init="marca='${monitor.marca}'"/>
 										<p ng-show="userForm.marca.$invalid && !userForm.marca.$pristine" class="help-block">Marca é Obrigatória</p>
 										
 										

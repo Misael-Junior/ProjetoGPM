@@ -11,5 +11,10 @@ public class IndexController {
 	public String index(){
 		return "index";
 	}
+	
+	@RequestMapping("painel")
+		public String painel(){
+			return "painel";
+		}
 
 }
