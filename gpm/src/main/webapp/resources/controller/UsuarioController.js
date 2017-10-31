@@ -16,20 +16,26 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.init = function(){
 		
 		$scope.usuarios = new Array();
+		
+		nome = $scope.nome;
 	
-		var response = $http.get("lista");
-		
-		response.success(function(data, status, headers, config){
+		if(document.getElementById("nome").value == ""){
 			
-			$scope.usuarios = data;
+			var response = $http.get("lista");
 			
-		});
-		
-		response.error(function(data, status, headers, config){
+			response.success(function(data, status, headers, config){
+				
+				$scope.usuarios = data;
+				
+			});
 			
-			$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
+			response.error(function(data, status, headers, config){
+				
+				$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
+				
+			});	
 			
-		});	
+		}
 	}
 	
 	$scope.buscar = function(){
