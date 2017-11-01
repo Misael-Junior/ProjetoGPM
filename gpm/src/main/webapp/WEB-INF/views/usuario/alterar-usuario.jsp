@@ -70,13 +70,13 @@
 									Completo*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Nome Completo do Usuário" required="required"
+										placeholder="Nome Completo do Usuário" required="required" style="text-transform:uppercase"
 										autofocus="autofocus" ng-model="nome" ng-init="nome='${usuario.nome}'"/>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
 								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
-										placeholder="Email do Usuário" required="required"
+										placeholder="Email do Usuário" required="required" 
 										autofocus="autofocus" ng-model="email" ng-init="email='${usuario.email}'"/>
 								</div>
 							</div>
@@ -86,7 +86,7 @@
 							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
 								<div class="col-sm-3">
-									<input type="password" class="form-control" id="senha"
+									<input type="password" class="form-control" id="senha" 
 										name="senha" placeholder="Senha do Usuário" required="required"
 										autofocus="autofocus" ng-model="senha" ng-init="senha='${usuario.senha}'"/>
 								</div>
@@ -94,7 +94,7 @@
 									Senha*</label>
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="rsenha"
-										name="rsenha" placeholder="Senha do Usuário"
+										name="rsenha" placeholder="Senha do Usuário" 
 										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="rsenha='${usuario.senha}'"/>
 									</div>
 							</div>
@@ -105,12 +105,12 @@
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
 								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
-										name="telefone" placeholder="Telefone do Usuário"
+										name="telefone" placeholder="Telefone do Usuário" 
 										required="required" autofocus="autofocus" ng-model="telefone" ng-init="telefone='${usuario.telefone}'"/>
 								</div>
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='${usuario.perfil}'">
+									<select class="form-control" name="perfil" id="perfil"  ng-model="perfil" ng-init="perfil='${usuario.perfil}'">
 										<option valeu="padrao">Padrão</option>
 										<option valeu="admin">Admin</option>
 									</select>

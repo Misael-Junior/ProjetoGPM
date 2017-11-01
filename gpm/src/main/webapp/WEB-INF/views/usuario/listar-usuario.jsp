@@ -39,16 +39,15 @@
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="UsuarioController">
+	 <div id="main" class="container-fluid" style="margin-top: 50px">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">
 				<h2>Listar Usuários</h2>
 			</div>
-			<div class="col-sm-6">
-				
+			<div class="col-sm-6">		
 				<div class="input-group h2">
-					<input name="nome" class="form-control" id="nome" type="text" placeholder="Digite o Nome do Usuário ..." ng-model="nome">
+					<input name="nome" class="form-control" id="nome" type="text" placeholder="Digite o Nome do Usuário Para Pesquisar ..." ng-model="nome">
 					<span class="input-group-btn">
 						<button class="btn btn-primary" type="submit" ng-click="buscar()">
 							<span class="glyphicon glyphicon-search"></span>

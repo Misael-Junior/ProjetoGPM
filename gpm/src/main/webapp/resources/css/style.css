@@ -1,6 +1,5 @@
 /* Style */
 
-
 /* Nav Top */
 .navbar{
 	background-color: #428bca;
@@ -72,7 +71,6 @@
 }
 
 /* Margim Entre os inputs */
-
 .form-group{
 	margin-top: 20px;
 }
@@ -98,6 +96,3 @@
 .checkConectado{
 	margin: 4px 100px;
 }
-
-
-

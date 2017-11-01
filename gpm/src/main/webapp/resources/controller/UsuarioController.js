@@ -15,42 +15,47 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	
 	$scope.init = function(){
 		
-		$scope.usuarios = new Array();
+		$scope.listar();
 		
-		nome = $scope.nome;
-	
-		if(document.getElementById("nome").value == ""){
-			
-			var response = $http.get("lista");
-			
-			response.success(function(data, status, headers, config){
-				
-				$scope.usuarios = data;
-				
-			});
-			
-			response.error(function(data, status, headers, config){
-				
-				$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
-				
-			});	
-			
-		}
 	}
 	
-	$scope.buscar = function(){
+	/* Listar Usuário */
+	$scope.listar = function(){
 		
 		$scope.usuarios = new Array();
-	
-		nome = $scope.nome;
 		
-		var response = $http.post("buscar/" + nome);
+		var response = $http.get("lista");
 		
 		response.success(function(data, status, headers, config){
 			
 			$scope.usuarios = data;
 			
 		});
+		
+		response.error(function(data, status, headers, config){
+			
+			$window.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco " + data);
+			
+		});	
+		
+	}
+	
+	/* Buscar Usuário */
+	$scope.buscar = function(){
+		
+		$scope.usuarios = new Array();
+		
+		nome = $scope.nome;
+		
+		var response = $http.post("buscar/" + nome);
+		
+		response.success(function(data, status, headers, config){
+		
+			$scope.usuarios = data;
+			
+		});
+		
+		
 	}
 	
 	/* Válidar formulário antes de cadastrar */	
@@ -67,6 +72,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		 	 
 	 }
 	
+	/* Cadastro de Usuário */
 	$scope.cadastrarUsuario = function(){
 		
 		if($scope.senha == $scope.rsenha){
@@ -114,6 +120,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		});
 	}
 	
+	/* Alterar Cadastro de Usuário */
 	$scope.alterarUsuario = function(){
 		
 		var mensagem = confirm ("Deseja Realmente Alterar o Cadastro de " + $scope.nome + " ??? ");
@@ -164,6 +171,7 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 		
 	}
 	
+	/* Excluir Cadastro de Usuário */
 	$scope.excluir = function(id, nome){
 		
 		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro de " + nome + " ??? ");
