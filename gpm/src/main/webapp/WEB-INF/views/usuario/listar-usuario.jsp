@@ -39,7 +39,7 @@
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px">
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="UsuarioController" data-ng-init="init(nome)">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">
@@ -49,7 +49,7 @@
 				<div class="input-group h2">
 					<input name="nome" class="form-control" id="nome" type="text" placeholder="Digite o Nome do Usuário Para Pesquisar ..." ng-model="nome">
 					<span class="input-group-btn">
-						<button class="btn btn-primary" type="submit" ng-click="buscar()">
+						<button class="btn btn-primary" type="submit" ng-click="buscar(nome)">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
 					</span>
@@ -66,7 +66,7 @@
 	 	<div id="list" class="row">
 		
 		<div class="table-responsive col-md-12">
-			<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="UsuarioController" data-ng-init="init()">
+			<table class="table table-striped" cellspacing="0" cellpadding="0">
 				<thead>
 					<tr>
 						<th>ID</th>

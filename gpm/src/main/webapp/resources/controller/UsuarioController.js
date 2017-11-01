@@ -13,9 +13,17 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	$scope.rsenha   = null;
 	$scope.telefone = null;
 	
-	$scope.init = function(){
+	$scope.init = function(nome){		
 		
-		$scope.listar();
+		if(nome == null){
+			
+			$scope.listar();
+			
+		}else{
+			
+			$scope.buscar();
+			
+		}
 		
 	}
 	
@@ -41,11 +49,9 @@ UsuarioControllerApp.controller("UsuarioController", function($scope, $window, $
 	}
 	
 	/* Buscar Usuário */
-	$scope.buscar = function(){
+	$scope.buscar = function(nome){
 		
 		$scope.usuarios = new Array();
-		
-		nome = $scope.nome;
 		
 		var response = $http.post("buscar/" + nome);
 		
