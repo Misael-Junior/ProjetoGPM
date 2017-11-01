@@ -49,7 +49,7 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form name="userForm" class="form-horizontal" ng-controller="UsuarioController" >
+				<form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="form-horizontal" ng-controller="UsuarioController" >
 					<div class="panel panel-default">
 						<div class="panel-body">
 						
@@ -59,8 +59,10 @@
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário"
-										autofocus="autofocus" ng-model="nome" required />
+										autofocus="autofocus" ng-model="nome" ng-model="user.username" ng-minlength="3" ng-maxlength="30" required />
 										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block">Nome é Obrigatório.</p>
+										<p ng-show="userForm.nome.$error.minlength" class="help-block">Nome mínimo de 3 caracteres.</p>
+                						<p ng-show="userForm.nome.$error.maxlength" class="help-block">Nome máximo de 30 caracteres.</p>
 										
 										
 								</div>
@@ -78,16 +80,22 @@
 								<div class="col-sm-3">
 									<input type="password" class="form-control" id="senha"
 										name="senha" placeholder="Senha do Usuário" required
-										autofocus="autofocus" ng-model="senha"/>
+										autofocus="autofocus" ng-model="senha" ng-minlength="6" ng-maxlength="30"/>
 										<p ng-show="userForm.senha.$invalid && !userForm.senha.$pristine" class="help-block">Senha é Obrigatório.</p>
+										<p ng-show="userForm.senha.$error.minlength" class="help-block">Senha minima de 6 caracteres.</p>
+                						<p ng-show="userForm.senha.$error.maxlength" class="help-block">Senha máximo de 30 caracteres.</p>
+										
 								</div>
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário"
-										required autofocus="autofocus" ng-model="rsenha" />
+										required autofocus="autofocus" ng-model="rsenha" ng-minlength="6" ng-maxlength="30"/>
 										<p ng-show="userForm.rsenha.$invalid && !userForm.rsenha.$pristine" class="help-block">Repetir Senha é Obrigatório.</p>
+										<p ng-show="userForm.rsenha.$error.minlength" class="help-block">Repetição de Senha no mínimo 6 caracteres.</p>
+                						<p ng-show="userForm.rsenha.$error.maxlength" class="help-block">Repetição de Senha no máximo 30 caracteres.</p>
+										
 									</div>
 							</div>
 
@@ -96,8 +104,11 @@
 								<div class="col-sm-3">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário"
-										required autofocus="autofocus" ng-model="telefone"/>
+										required autofocus="autofocus" ng-model="telefone" ng-minlength="9" ng-maxlength="20"/>
 										<p ng-show="userForm.telefone.$invalid && !userForm.telefone.$pristine" class="help-block">Telefone é Obrigatório.</p>
+										<p ng-show="userForm.telefone.$error.minlength" class="help-block">Número telefônico no mínimo 9 caracteres.</p>
+                						<p ng-show="userForm.telefone.$error.maxlength" class="help-block">Número telefônico no máximo 20 caracteres.</p>
+										
 								</div>
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-3">
@@ -110,7 +121,7 @@
 							
 							<div class="form-group" align="center">
 								<div class="col-sm-5">
-									<button type="button" class="btn btn-primary" ng-disabled="mainForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
+									<button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
 								</div>
 							</div>
 							
