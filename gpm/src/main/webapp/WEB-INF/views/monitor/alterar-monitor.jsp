@@ -67,11 +67,11 @@
 							</div>
 							<div class="form-group">
 									<label for="marca" class="col-sm-2 control-label">Marca*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.marca.$invalid && !userForm.marca.$pristine }">
 									<input type="text" class="form-control" id="marca" name="marca"
 										placeholder="Marca do monitor"
 										autofocus="autofocus" ng-model="marca" required="required" ng-init="marca='${monitor.marca}'"/>
-										<p ng-show="userForm.marca.$invalid && !userForm.marca.$pristine" class="help-block">Marca é Obrigatória</p>
+										
 										
 										
 								</div>
@@ -80,7 +80,7 @@
 									<input type="modelo" class="form-control" id="modelo" name="modelo"
 										placeholder="Modelo do monitor" required="required"
 										autofocus="autofocus" ng-model="modelo" required ng-init="modelo='${monitor.modelo}'"/>
-										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block">Informe o modelo do monitor.</p>
+										
 								</div>
 							</div>
 
@@ -90,14 +90,14 @@
 									<input type="text" class="form-control" id="montomb"
 										name="montomb" placeholder="Tombamento(Patrimônio)" required
 										autofocus="autofocus" ng-model="montomb" ng-init="montomb='${monitor.montomb}'"/>
-										<p ng-show="userForm.montomb.$invalid && !userForm.montomb.$pristine" class="help-block">Informe o número do tombamento.</p>
+									
 								</div>
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
 									<input type="text" class="form-control" id="descricao"
 										name="descricao" placeholder="Escreva uma descrição"
 										required autofocus="autofocus" ng-model="descricao" ng-init="descricao='${monitor.descricao}'" />
-										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe uma descrição</p>
+								
 									</div>
 							</div>
 							

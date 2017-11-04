@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="MonitorControllerApp" >
+<html ng-app="ImpressoraControllerApp" >
 	<head>
 	<meta charset="utf-8" />
 	<title>GPM | CADASTRO DE IMPRESSORA</title>
@@ -59,7 +59,7 @@
 									<input type="text" class="form-control" id="modelo" name="modelo"
 										placeholder="Modelo da impressora"
 										autofocus="autofocus" ng-model="modelo" required />
-										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block">Modelo é Obrigatória</p>
+										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block"></p>
 										
 										
 								</div>
@@ -68,7 +68,7 @@
 									<input type="text" class="form-control" id="descricao" name="descricao"
 										placeholder="Descrição da impressora" required="required"
 										autofocus="autofocus" ng-model="descricao" required/>
-										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe o modelo do monitor.</p>
+										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block"></p>
 								</div>
 							</div>
 
@@ -78,14 +78,14 @@
 									<input type="text" class="form-control" id="ramal"
 										name="ramal" placeholder="Ramal" required
 										autofocus="autofocus" ng-model="ramal"/>
-										<p ng-show="userForm.ramal.$invalid && !userForm.ramal.$pristine" class="help-block">Informe o número do ramal.</p>
+										<p ng-show="userForm.ramal.$invalid && !userForm.ramal.$pristine" class="help-block"></p>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
 										required autofocus="autofocus" ng-model="setor" />
-										<p ng-show="userForm.setor.$invalid && !userForm.setor.$pristine" class="help-block">Informe o setor</p>
+										<p ng-show="userForm.setor.$invalid && !userForm.setor.$pristine" class="help-block"></p>
 									</div>
 							</div>
 
@@ -95,14 +95,14 @@
 									<input type="text" class="form-control" id="ip"
 										name="ip" placeholder="Ex: 192.168.102.14" required
 										autofocus="autofocus" ng-model="ip"/>
-										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block">Informe o número do IP.</p>
+										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Número de Série*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.num_serie.$invalid && !userForm.num_serie.$pristine }">
 									<input type="text" class="form-control" id="num_serie"
 										name="num_serie" placeholder="Ex:8511622515165"
 										required autofocus="autofocus" ng-model="num_serie" />
-										<p ng-show="userForm.num_serie.$invalid && !userForm.num_serie.$pristine" class="help-block">Informe o número de série</p>
+										<p ng-show="userForm.num_serie.$invalid && !userForm.num_serie.$pristine" class="help-block"></p>
 									</div>
 							</div>
 														

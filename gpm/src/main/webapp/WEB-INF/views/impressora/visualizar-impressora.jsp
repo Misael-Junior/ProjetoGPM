@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="MonitorControllerApp" >
+<html ng-app="ImpressoraControllerApp" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -67,56 +67,56 @@
 								</div>
 							</div>
 						
-							<div class="form-group" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }" >
+							<div class="form-group" >
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="modelo" name="modelo"
 										placeholder="Modelo da impressora"
-										autofocus="autofocus" ng-model="modelo" required />
-										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block">Modelo é Obrigatória</p>
+										autofocus="autofocus" ng-model="modelo" required readonly="readonly" ng-init="modelo='${impressora.modelo}'" />
+										<p  class="help-block"></p>
 										
 										
 								</div>
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" id="descricao" name="descricao"
 										placeholder="Descrição da impressora" required="required"
-										autofocus="autofocus" ng-model="descricao" required/>
-										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block">Informe o modelo do monitor.</p>
+										autofocus="autofocus" ng-model="descricao" required readonly="readonly" ng-init="descricao='${impressora.descricao}'"/>
+										<p  class="help-block"></p>
 								</div>
 							</div>
 
-							<div class="form-group" ng-class="{ 'has-error' : userForm.ramal.$invalid && !userForm.ramal.$pristine }" >
+							<div class="form-group" >
 								<label for="ramal" class="col-sm-2 control-label">Ramal*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="ramal"
 										name="ramal" placeholder="Ramal" required
-										autofocus="autofocus" ng-model="ramal"/>
-										<p ng-show="userForm.ramal.$invalid && !userForm.ramal.$pristine" class="help-block">Informe o número do ramal.</p>
+										autofocus="autofocus" ng-model="ramal" readonly="readonly" ng-init="ramal='${impressora.ramal}'"/>
+										<p  class="help-block"></p>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
+								<div class="col-sm-3" >
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
-										required autofocus="autofocus" ng-model="setor" />
-										<p ng-show="userForm.setor.$invalid && !userForm.setor.$pristine" class="help-block">Informe o setor</p>
+										required autofocus="autofocus" ng-model="setor" readonly="readonly" ng-init="setor='${impressora.setor}'"/>
+										<p  class="help-block">/p>
 									</div>
 							</div>
 
-                                <div class="form-group" ng-class="{ 'has-error' : userForm.ip.$invalid && !userForm.ip.$pristine }" >
+                                <div class="form-group" >
 								<label for="ramal" class="col-sm-2 control-label">IP*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="ip"
 										name="ip" placeholder="Ex: 192.168.102.14" required
-										autofocus="autofocus" ng-model="ip"/>
-										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block">Informe o número do IP.</p>
+										autofocus="autofocus" ng-model="ip" readonly="readonly" ng-init="ip='${impressora.ip}'"/>
+										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
 								<label for="setor" class="col-sm-2 control-label">Número de Série*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.num_serie.$invalid && !userForm.num_serie.$pristine }">
+								<div class="col-sm-3" >
 									<input type="text" class="form-control" id="num_serie"
 										name="num_serie" placeholder="Ex:8511622515165"
-										required autofocus="autofocus" ng-model="num_serie" />
-										<p ng-show="userForm.num_serie.$invalid && !userForm.num_serie.$pristine" class="help-block">Informe o número de série</p>
+										required autofocus="autofocus" ng-model="num_serie" readonly="readonly" ng-init="num_serie='${impressora.num_serie}'" />
+										<p class="help-block"></p>
 									</div>
 							</div>
 							

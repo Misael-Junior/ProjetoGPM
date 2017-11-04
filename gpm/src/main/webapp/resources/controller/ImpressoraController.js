@@ -8,11 +8,11 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 	
 	$scope.id       = null;
 	$scope.descricao  = null;
-    $scope.ip  = null;
-	$scope.ramal  = null;
+ 	$scope.ramal  = null;
 	$scope.setor  = null;
 	$scope.num_serie  = null;
 	$scope.modelo  = null;
+	$scope.ip = null;
 	
 	
 	$scope.init = function(){
@@ -49,8 +49,8 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 	
 			var impressora      = new Object();
 			impressora.descricao     = $scope.descricao;
-			impressora.ip    = $scope.ip;
 			impressora.ramal    = $scope.ramal;
+			impressora.ip    = $scope.ip;
 			impressora.setor = $scope.setor;
 			impressora.num_serie = $scope.num_serie;
 			impressora.modelo = $scope.modelo;
@@ -62,7 +62,7 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 		
 		response.success(function(data, status, headers, config){
 			
-			if(data.montomb != null){
+			if(data.num_serie != null){
 				
 				$window.alert("Cadastro de impressora realizado com Sucesso !!!");
 				
