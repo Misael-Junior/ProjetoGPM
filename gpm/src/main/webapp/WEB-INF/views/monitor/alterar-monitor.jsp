@@ -53,7 +53,7 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form class="form-horizontal" ng-controller="MonitorController">
+				<form name="userForm" class="form-horizontal" ng-submit="submitForm(userForm.$valid)"  ng-controller="MonitorController">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="form-group">
@@ -65,33 +65,31 @@
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${monitor.id}'"/>
 								</div>
 							</div>
+							
+							
 							<div class="form-group">
-									<label for="marca" class="col-sm-2 control-label">Marca*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.marca.$invalid && !userForm.marca.$pristine }">
-									<input type="text" class="form-control" id="marca" name="marca"
-										placeholder="Marca do monitor"
-										autofocus="autofocus" ng-model="marca" required="required" ng-init="marca='${monitor.marca}'"/>
-										
-										
-										
-								</div>
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
-									<input type="modelo" class="form-control" id="modelo" name="modelo"
-										placeholder="Modelo do monitor" required="required"
-										autofocus="autofocus" ng-model="modelo" required ng-init="modelo='${monitor.modelo}'"/>
-										
+								<div class="col-sm-3">
+									<select class="form-control" name="modelo" id="modelo" ng-model="modelo" ng-init="modelo='HP'">
+										<option valeu="HP" ng-selected="true">HP</option>
+										<option valeu="LG">LG</option>
+										<option valeu="Lenovo">Lenovo</option>
+										<option valeu="AOC">AOC</option>
+										<option valeu="Sansung">Sansung</option>
+									</select>
 								</div>
-							</div>
-
-							<div class="form-group" ng-class="{ 'has-error' : userForm.tomb.$invalid && !userForm.tomb.$pristine }" >
-								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>
+								</div>
+								
+							<div class="form-group" ng-class="{ 'has-error' : userForm.montomb.$invalid && !userForm.montomb.$pristine }" >
+								<label for="montomb" class="col-sm-2 control-label">Tombamento*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="montomb"
 										name="montomb" placeholder="Tombamento(Patrimônio)" required
 										autofocus="autofocus" ng-model="montomb" ng-init="montomb='${monitor.montomb}'"/>
+									</div>
 									
 								</div>
+							<div class="form-group" >
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
 									<input type="text" class="form-control" id="descricao"
@@ -101,9 +99,9 @@
 									</div>
 							</div>
 							
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button type="button" class="btn btn-primary" ng-click="alterarMonitor()">Alterar Cadastro</button>
+							<div class="form-group" align="center">
+								<div class="col-sm-5">
+										<button type="button" class="btn btn-primary"  ng-disabled="userForm.$invalid" ng-click="alterarMonitor(userForm.$valid)">Alterar Cadastro</button>
 								</div>
 							</div>
 						</div>

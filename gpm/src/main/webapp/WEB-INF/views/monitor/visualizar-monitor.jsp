@@ -65,16 +65,8 @@
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${monitor.id}'"/>
 								</div>
 							</div>
-							<div class="form-group">
-									<label for="marca" class="col-sm-2 control-label">Marca*</label>
-								<div class="col-sm-3">
-									<input type="text" class="form-control" id="marca" name="marca"
-										placeholder="Marca do monitor"
-										autofocus="autofocus" ng-model="marca"  readonly="readonly" required ng-init="marca='${monitor.marca}'"/>
-										<p class="help-block"></p>
-										
-										
-								</div>
+							
+								<div class="form-group">
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-3"">
 									<input type="modelo" class="form-control" id="modelo" name="modelo"
@@ -92,6 +84,8 @@
 										autofocus="autofocus" ng-model="montomb"  readonly="readonly" ng-init="montomb='${monitor.montomb}'"/>
 										<p class="help-block"></p>
 								</div>
+								</div>
+								<div class="form-group">
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="descricao"

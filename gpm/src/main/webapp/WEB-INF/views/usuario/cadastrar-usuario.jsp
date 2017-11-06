@@ -66,8 +66,11 @@
 										
 										
 								</div>
+								</div>
+								
+								<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required" 
 										autofocus="autofocus" ng-model="email"/>
@@ -86,9 +89,12 @@
                 						<p ng-show="userForm.senha.$error.maxlength" class="help-block">Senha máximo de 30 caracteres.</p>
 										
 								</div>
+								</div>
+								
+								<div class="form-group" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
+									<div class="col-sm-3">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário" 
 										required autofocus="autofocus" ng-model="rsenha" ng-minlength="6" ng-maxlength="30"/>
@@ -98,6 +104,7 @@
 										
 									</div>
 							</div>
+
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
@@ -110,6 +117,9 @@
                 						<p ng-show="userForm.telefone.$error.maxlength" class="help-block">Número telefônico no máximo 20 caracteres.</p>
 										
 								</div>
+								</div>
+								
+								<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
@@ -117,8 +127,9 @@
 										<option valeu="Admin">Admin</option>
 									</select>
 								</div>
-							</div>
-							
+								</div>
+						
+				
 							<div class="form-group" align="center">
 								<div class="col-sm-5">
 									<button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>

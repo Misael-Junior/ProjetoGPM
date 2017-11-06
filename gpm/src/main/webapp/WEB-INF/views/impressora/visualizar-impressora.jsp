@@ -75,8 +75,10 @@
 										autofocus="autofocus" ng-model="modelo" required readonly="readonly" ng-init="modelo='${impressora.modelo}'" />
 										<p  class="help-block"></p>
 										
+										</div>
+										</div>
 										
-								</div>
+								<div class="form-group" >		
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="descricao" name="descricao"
@@ -94,12 +96,15 @@
 										autofocus="autofocus" ng-model="ramal" readonly="readonly" ng-init="ramal='${impressora.ramal}'"/>
 										<p  class="help-block"></p>
 								</div>
+								</div>
+								
+								<div class="form-group" >
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-3" >
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
 										required autofocus="autofocus" ng-model="setor" readonly="readonly" ng-init="setor='${impressora.setor}'"/>
-										<p  class="help-block">/p>
+										<p  class="help-block">
 									</div>
 							</div>
 
@@ -111,6 +116,9 @@
 										autofocus="autofocus" ng-model="ip" readonly="readonly" ng-init="ip='${impressora.ip}'"/>
 										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
+								</div>
+								
+								<div class="form-group" >
 								<label for="setor" class="col-sm-2 control-label">Número de Série*</label>
 								<div class="col-sm-3" >
 									<input type="text" class="form-control" id="num_serie"

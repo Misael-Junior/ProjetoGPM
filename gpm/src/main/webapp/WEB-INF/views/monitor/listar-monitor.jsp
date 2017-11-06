@@ -71,7 +71,6 @@
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Marca</th>
 						<th>Modelo</th>
 						<th>Tombamento</th>
 						<th>Descrição</th>
@@ -81,14 +80,13 @@
 				<tbody>
 					<tr ng-repeat="monitor in monitores">
 						<td>{{monitor.id}}</td>
-						<td>{{monitor.marca}}</td>
 						<td>{{monitor.modelo}}</td>
 						<td>{{monitor.montomb}}</td>
 						<td>{{monitor.descricao}}</td>
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{monitor.id}}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{monitor.id}}" >Editar</a>
-							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(monitor.id, monitor.marca)">Excluir</a>
+							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(monitor.id, monitor.montomb)">Excluir</a>
 						</td>
 					</tr>
 				</tbody>

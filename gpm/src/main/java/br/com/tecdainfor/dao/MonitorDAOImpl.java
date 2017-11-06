@@ -53,7 +53,7 @@ public class MonitorDAOImpl implements MonitorDAO {
 	
 	@javax.transaction.Transactional
 	public List<Monitor> listarMonitores(){
-		return manager.createQuery("SELECT u FROM Monitor u ORDER BY u.marca", Monitor.class).getResultList();
+		return manager.createQuery("SELECT u FROM Monitor u ORDER BY u.modelo", Monitor.class).getResultList();
 	}
 
 

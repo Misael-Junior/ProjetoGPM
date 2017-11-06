@@ -19,8 +19,6 @@ public class Monitor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_monitor_pk", nullable = false)
 	private int id;
-	@Column(name = "st_marca")
-	private String marca;
 	@Column(name = "st_montomb")
 	private String montomb;
 	@Column(name = "st_modelo")
@@ -36,12 +34,7 @@ public class Monitor {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+
 	public String getMontomb() {
 		return montomb;
 	}

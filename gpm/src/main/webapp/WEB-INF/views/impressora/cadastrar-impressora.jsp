@@ -26,6 +26,7 @@
 				    	</button>
 				    	<a class="navbar-brand" href="#">Gerenciador Parque Máquinas</a>
 				   	</div>
+				   	</br>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="../painel">Início</a></li>
@@ -49,28 +50,32 @@
 				</div>
 				
 				<!-- Formulário -->
-				<form name="userForm" class="form-horizontal" ng-controller="ImpressoraController" >
+				<form name="userForm" ng-submit="submitForm(userForm.$valid)" class="form-horizontal" ng-controller="ImpressoraController" >
 					<div class="panel panel-default">
 						<div class="panel-body">
 						
 							<div class="form-group" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }" >
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="modelo" name="modelo"
-										placeholder="Modelo da impressora"
-										autofocus="autofocus" ng-model="modelo" required />
-										<p ng-show="userForm.modelo.$invalid && !userForm.modelo.$pristine" class="help-block"></p>
-										
-										
+									<select class="form-control" name="modelo" id="modelo" ng-model="modelo" ng-init="modelo='Brother'">
+										<option value="Brother" ng-selected="true">Brother</option>
+										<option value="Lexmark">Lexmark</option>
+										<option value="HP">HP</option>
+										<option value="Kyocera">Kyocera</option>
+									</select>
 								</div>
+								</div>
+								
+								
+								<div  class="form-group"  ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">		
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
-									<input type="text" class="form-control" id="descricao" name="descricao"
+								<div class="col-sm-3">
+										<input type="text" class="form-control" id="descricao" name="descricao"
 										placeholder="Descrição da impressora" required="required"
 										autofocus="autofocus" ng-model="descricao" required/>
 										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block"></p>
-								</div>
-							</div>
+								</div>	</div>
+							
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.ramal.$invalid && !userForm.ramal.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Ramal*</label>
@@ -80,8 +85,11 @@
 										autofocus="autofocus" ng-model="ramal"/>
 										<p ng-show="userForm.ramal.$invalid && !userForm.ramal.$pristine" class="help-block"></p>
 								</div>
+								</div>
+								
+								<div class="form-group" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
 										required autofocus="autofocus" ng-model="setor" />
@@ -97,8 +105,11 @@
 										autofocus="autofocus" ng-model="ip"/>
 										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
+								</div>
+								
+							<div  class="form-group" ng-class="{ 'has-error' : userForm.num_serie.$invalid && !userForm.num_serie.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Número de Série*</label>
-								<div class="col-sm-3" ng-class="{ 'has-error' : userForm.num_serie.$invalid && !userForm.num_serie.$pristine }">
+							      <div class="col-sm-3">
 									<input type="text" class="form-control" id="num_serie"
 										name="num_serie" placeholder="Ex:8511622515165"
 										required autofocus="autofocus" ng-model="num_serie" />
@@ -108,7 +119,7 @@
 														
 							<div class="form-group" align="center">
 								<div class="col-sm-5">
-									<button type="button" class="btn btn-primary" ng-disabled="mainForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
+									<button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
 								</div>
 							</div>
 							

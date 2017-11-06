@@ -92,7 +92,7 @@
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{impressora.id}}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{impressora.id}}" >Editar</a>
-							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(impressora.id, monitor.marca)">Excluir</a>
+							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(impressora.id, impressora.modelo)">Excluir</a>
 						</td>
 					</tr>
 				</tbody>

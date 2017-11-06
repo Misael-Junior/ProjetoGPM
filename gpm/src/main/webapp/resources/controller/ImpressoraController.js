@@ -97,13 +97,14 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 			
 			
 				
-			var impressora      = new Object();
-			impressora.descricao     = $scope.descricao;
-			impressora.ip    = $scope.ip;
-			impressora.ramal    = $scope.ramal;
-			impressora.setor = $scope.setor;
-			impressora.num_serie = $scope.num_serie;
-			impressora.modelo = $scope.modelo;
+			var impressora         = new Object();
+			impressora.id          = $scope.id;
+			impressora.descricao   = $scope.descricao;
+			impressora.ip          = $scope.ip;
+			impressora.ramal       = $scope.ramal;
+			impressora.setor       = $scope.setor;
+			impressora.num_serie   = $scope.num_serie;
+			impressora.modelo      = $scope.modelo;
 				
 				var response = $http.post("../alterar", impressora);
 				
@@ -113,13 +114,13 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 			
 				$window.alert("Cadastro de Alterado com Sucesso !!!");
 				
-				$scope.id       = null;
-				impressora.descricao     = $scope.descricao;
-				impressora.ip    = $scope.ip;
-				impressora.ramal    = $scope.ramal;
-				impressora.setor = $scope.setor;
-				impressora.num_serie = $scope.num_serie;
-				impressora.modelo = $scope.modelo;
+				$scope.id                = null;
+				impressora.descricao     = null;
+				impressora.ip            = null;
+				impressora.ramal         = null;
+				impressora.setor         = null;
+				impressora.num_serie     = null;
+				impressora.modelo        = null;
 								
 				window.location.href = "../listar";
 				
@@ -135,18 +136,6 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 		
 	}
 	
-	/* $scope.buscar = function(){
-		
-		nome = $scope.nome;
-		
-		var response = $http.post("buscar/" + nome);
-		
-		response.success(function(data, status, headers, config){
-			
-			$scope.usuarios = data;
-			
-		});
-	}*/
 	
 	$scope.excluir = function(id, modelo){
 		
