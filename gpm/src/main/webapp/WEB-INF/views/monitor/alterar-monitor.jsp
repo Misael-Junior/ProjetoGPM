@@ -70,7 +70,7 @@
 							<div class="form-group">
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="modelo" id="modelo" ng-model="modelo" ng-init="modelo='HP'">
+									<select class="form-control" name="modelo" id="modelo" ng-model="modelo"  ng-init="modelo='${monitor.modelo}'">
 										<option valeu="HP" ng-selected="true">HP</option>
 										<option valeu="LG">LG</option>
 										<option valeu="Lenovo">Lenovo</option>

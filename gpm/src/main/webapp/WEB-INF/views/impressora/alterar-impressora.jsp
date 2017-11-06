@@ -71,7 +71,7 @@
 						<div class="form-group" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }" >
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="modelo" id="modelo" ng-model="modelo" ng-init="modelo='Brother'">
+									<select class="form-control" name="modelo" id="modelo" ng-model="modelo"  ng-init="modelo='${impressora.modelo}'">
 										<option value="Brother" ng-selected="true">Brother</option>
 										<option value="Lexmark">Lexmark</option>
 										<option value="HP">HP</option>
