@@ -80,7 +80,7 @@
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.senha.$invalid && !userForm.senha.$pristine }" >
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="password" class="form-control" id="senha"
 										name="senha" placeholder="Senha do Usuário" required 
 										autofocus="autofocus" ng-model="senha" ng-minlength="6" ng-maxlength="30"/>
@@ -94,7 +94,7 @@
 								<div class="form-group" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
-									<div class="col-sm-3">
+									<div class="col-sm-2">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário" 
 										required autofocus="autofocus" ng-model="rsenha" ng-minlength="6" ng-maxlength="30"/>
@@ -108,10 +108,10 @@
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="telefone" class="form-control" id="telefone"
 										name="telefone" placeholder="Telefone do Usuário" 
-										required autofocus="autofocus" ng-model="telefone" ng-minlength="9" ng-maxlength="20"/>
+										required autofocus="autofocus" ng-model="telefone" ng-minlength="9" ng-maxlength="20" ui-mask="(99)9?9999-9999"/>
 										<p ng-show="userForm.telefone.$invalid && !userForm.telefone.$pristine" class="help-block">Telefone é Obrigatório.</p>
 										<p ng-show="userForm.telefone.$error.minlength" class="help-block">Número telefônico no mínimo 9 caracteres.</p>
                 						<p ng-show="userForm.telefone.$error.maxlength" class="help-block">Número telefônico no máximo 20 caracteres.</p>
@@ -121,7 +121,7 @@
 								
 								<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
 										<option valeu="Padrão" ng-selected="true">Padrão</option>
 										<option valeu="Admin">Admin</option>

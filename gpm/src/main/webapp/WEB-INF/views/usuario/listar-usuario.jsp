@@ -7,7 +7,7 @@
 		 <meta charset="utf-8">
 		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		 <meta name="viewport" content="width=device-width, initial-scale=1">
-		 <title>GPM | LISTA DE USUÁRIOS</title>
+		 <title>GPM | LISTA DE COMPUTADOR</title>
 
 		 <!-- CSS -->
 		<link href="<c:url value='../resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
@@ -45,9 +45,9 @@
 			<div class="col-sm-3">
 				<h2>Listar Usuários</h2>
 			</div>
-			<div class="col-sm-6">		
+			<div class="col-sm-5">		
 				<div class="input-group h2">
-					<input name="nome" class="form-control" id="nome" type="text" placeholder="Digite o Nome do Usuário Para Pesquisar ..." ng-model="nome">
+					<input name="nome" class="form-control" id="nome" type="text" placeholder="Pesquisar Usuário ..." ng-model="nome">
 					<span class="input-group-btn">
 						<button class="btn btn-primary" type="submit" ng-click="buscar(nome)">
 							<span class="glyphicon glyphicon-search"></span>

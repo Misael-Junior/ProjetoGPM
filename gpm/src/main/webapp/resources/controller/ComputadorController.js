@@ -52,7 +52,7 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 			var computador         = new Object();
 			computador.nome        = $scope.nome;
 			computador.descricao   = $scope.descricao;
-			computador.modelo       = $scope.modelo;
+			computador.modelo      = $scope.modelo;
 			computador.gap_tomb    = $scope.gap_tomb;
 			computador.ramal       = $scope.ramal;
 			computador.setor       = $scope.setor;
@@ -68,11 +68,11 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 			
 			if(data.gap_tomb != null){
 				
-				$window.alert("Cadastro de computador realizado com Sucesso !!!");
+				$window.alert("Cadastro de Computador Realizado com Sucesso !!!");
 				
 				computador.nome        = $scope.nome;
 				computador.descricao   = $scope.descricao;
-				computador.modelo       = $scope.modelo;
+				computador.modelo      = $scope.modelo;
 				computador.gap_tomb    = $scope.gap_tomb;
 				computador.ramal       = $scope.ramal;
 				computador.setor       = $scope.setor;
@@ -84,24 +84,23 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 				
 			}else{
 				
-				$window.alert("Erro ao Tentar Cadastrar");
+				$window.alert("Erro ao Cadastrar Computador " + data);
 			}			
 		});
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert("Erro ao Tentar Alterar ");
+			$window.alert("Erro ao Tentar Cadastrar Computador " + data);
 			
 		});
 	}
 	
 	$scope.alterarComputador = function(){
 		
-		var mensagem = confirm ("Deseja Realmente Alterar o Cadastro ??? ");
+		var mensagem = confirm ("Deseja Realmente Alterar o Cadastro Computador ??? ");
 		
 		if(mensagem == true){
-			
-			
+						
 				
 			var computador         = new Object();
 			computador.id          = $scope.id;
@@ -120,7 +119,7 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 			
 			response.success(function(data, status, headers, config){
 			
-				$window.alert("Cadastro de Alterado com Sucesso !!!");
+				$window.alert("Cadastro de Computador Alterado com Sucesso !!!");
 				
 				$scope.id                = null;
 				computador.nome          = null;
@@ -138,7 +137,7 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 			
 			response.error(function(data, status, headers, config){
 				
-				$window.alert("Erro ao Tentar Alterar ");
+				$window.alert("Erro ao Tentar Alterar Cadastro de Computador " + data);
 				
 			});
 		
@@ -149,7 +148,7 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 	
 	$scope.excluir = function(id, modelo){
 		
-		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro??? ");
+		var mensagem = confirm ("Deseja Realmente Excluir o Cadastro de Computador ??? ");
 		
 		if(mensagem == true){
 			
@@ -159,13 +158,13 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 				
 				$scope.init();
 				
-				$window.alert("Cadastro de excluido com Sucesso !!!");
+				$window.alert("Cadastro de Computador Excluido com Sucesso !!!");
 				
 			});
 			
 			response.error(function(data, status, headers, config){
 				
-				$window.alert("Erro ao Tentar Excluir ");
+				$window.alert("Erro ao Tentar Excluir Cadastro de Computador " + data);
 				
 			});
 		}	

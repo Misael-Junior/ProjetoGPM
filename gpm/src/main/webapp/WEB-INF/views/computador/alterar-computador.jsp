@@ -33,10 +33,10 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						      <li><a href="/gpm/painel">Início</a></li>
-						     <li><a href="../usuario/listar">Usuário</a></li>
-						     <li><a href="../computador/listar">Computador</a></li>
-						     <li><a href="../monitor/listar">Monitor</a></li>
-						     <li><a href="../listar">Impressora</a></li>
+						     <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						     <li><a href="../listar">Computador</a></li>
+						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						     <li><a href="/gpm/listar">Impressora</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -51,38 +51,29 @@
 					<h3 class="panel-title panel-title-computador">Cadastro de
 						Computador</h3>
 				</div>
-				
-				
-				
+					
 				<!-- Formulário -->
 				<form name="userForm" ng-submit="submitForm(userForm.$valid)" class="form-horizontal" ng-controller="ComputadorController" >
 					<div class="panel panel-default">
-						<div class="panel-body">
-						
-						
-						
-						
+						<div class="panel-body">					
 						<div class="form-group">
 								<label for="codigo" class="col-sm-2 control-label">Codigo
 								*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="id" name="id"
 										placeholder="Código do Computador" required="required"
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${computador.id}'"/>
 								</div>
-							</div>				
-						
-						
-						
-						
+							</div>							
+					
 							<div class="form-group" ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }" >
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<select class="form-control" name="modelo" id="modelo" ng-model="modelo"  ng-init="modelo='${computador.modelo}'">
-										<option value="HP" ng-selected="true">HP</option>
-										<option value="POSITIVO">POSITIVO</option>
-										<option value="LENOVO">LENOVO</option>
-										<option value="ELCOMA">ELCOMA</option>
+										<option value="Hp" ng-selected="true">Hp</option>
+										<option value="Positivo">Positivo</option>
+										<option value="Lenovo">Lenovo</option>
+										<option value="Elcoma">Elcoma</option>
 									</select>
 								</div>
 								</div>
@@ -109,7 +100,7 @@
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.gap_tomb.$invalid && !userForm.gap_tomb.$pristine }" >
 								<label for="gap_tomb" class="col-sm-2 control-label">Tombamento*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="gap_tomb"
 										name="gap_tomb" placeholder="(Patrimônio)" required
 										autofocus="autofocus" ng-model="gap_tomb"  ng-init="gap_tomb='${computador.gap_tomb}'"/>
@@ -119,7 +110,7 @@
 								
 								<div class="form-group" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
 										required autofocus="autofocus" ng-model="setor"  ng-init="setor='${computador.setor}'" />
@@ -129,17 +120,17 @@
 
                                 <div class="form-group" ng-class="{ 'has-error' : userForm.ip.$invalid && !userForm.ip.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">IP*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ip"
 										name="ip" placeholder="Ex: 192.168.102.14" required
-										autofocus="autofocus" ng-model="ip"  ng-init="ramal='${computador.ramal}'"/>
+										autofocus="autofocus" ng-model="ip"  ng-init="ip='${computador.ip}'"/>
 										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
 								</div>
 								
 							<div class="form-group" ng-class="{ 'has-error' : userForm.tipo.$invalid && !userForm.tipo.$pristine }" >
 								<label for="tipo" class="col-sm-2 control-label">Tipo*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-1">
 									<select class="form-control" name="tipo" id="tipo" ng-model="tipo"  ng-init="tipo='${computador.tipo}'">
 										<option value="1" ng-selected="true">1</option>
 										<option value="2">2</option>
@@ -150,7 +141,7 @@
 								
 									<div class="form-group" ng-class="{ 'has-error' : userForm.ramal.$invalid && !userForm.ramal.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Ramal*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ramal"
 										name="ramal" placeholder="Ramal" required
 										autofocus="autofocus" ng-model="ramal"  ng-init="ramal='${computador.ramal}'"/>

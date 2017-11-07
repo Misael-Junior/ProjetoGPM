@@ -34,9 +34,9 @@
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="/gpm/painel">Início</a></li>
 						     <li><a href="../listar">Usuário</a></li>
-						     <li><a href="../computador/listar">Computador</a></li>
-						     <li><a href="../monitor/listar">Monitor</a></li>
-						     <li><a href="../impressora/listar">Impressora</a></li>
+						     <li><a href="/gpm/computador/listar">Computador</a></li>
+						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						     <li><a href="/gpm/impressora/listar">Impressora</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -59,7 +59,7 @@
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Codigo
 								*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="id" name="id"
 										placeholder="Código do Usuário" required="required"
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${usuario.id}'"/>
@@ -68,7 +68,7 @@
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Nome
 									Completo*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Nome Completo do Usuário" required="required"
 										autofocus="autofocus" ng-model="nome" readonly="readonly" ng-init="nome='${usuario.nome}'"/>
@@ -77,7 +77,7 @@
 							<span class='msg-erro msg-nome'></span>
 							<div class="form-group">
 								<label for="setor" class="col-sm-2 control-label">Email*</label>
-								<div class="col-sm-4">
+								<div class="col-sm-3">
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required"
 										autofocus="autofocus" ng-model="email" readonly="readonly" ng-init="email='${usuario.email}'"/>
@@ -86,7 +86,7 @@
 							<span class='msg-erro msg-email'></span>
 							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="password" class="form-control" id="senha"
 										name="senha" placeholder="Senha do Usuário" required="required"
 										autofocus="autofocus" ng-model="senha" readonly="readonly" ng-init="senha='${usuario.senha}'"/>
@@ -96,7 +96,7 @@
 							<div class="form-group">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="password" class="form-control" id="rsenha"
 										name="rsenha" placeholder="Senha do Usuário"
 										required="required" autofocus="autofocus" ng-model="rsenha" readonly="readonly" ng-init="rsenha='${usuario.senha}'"/>

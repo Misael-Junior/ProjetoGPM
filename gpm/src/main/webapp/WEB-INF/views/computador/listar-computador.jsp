@@ -31,7 +31,7 @@
 				    <ul class="nav navbar-nav navbar-right">
 					      <li><a href="../painel">Início</a></li>
 						  <li><a href="../usuario/listar">Usuário</a></li>
-						  <li><a href="../computador/listar">Computador</a></li>
+						  <li><a href="../listar">Computador</a></li>
 						  <li><a href="../monitor/listar">Monitor</a></li>
 						  <li><a href="../impressora/listar">Impressora</a></li>
 				    </ul>
@@ -45,7 +45,7 @@
 			<div class="col-sm-3">
 				<h2>Lista Computador</h2>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-5">
 				
 				<div class="input-group h2">
 					<input name="setor" class="form-control" id="setor" type="text" placeholder="Pesquisar Computador" ng-model="setor">
@@ -74,11 +74,8 @@
 						<th>Modelo</th>
 						<th>Nome</th>
 						<th>Ramal</th>
-						<th>Tombamento(Patrimônio)</th>
 						<th>Setor</th>
 						<th>IP</th>
-						<th>Tipo</th>
-						<th>Descrição</th>
 						<th class="actions">Ações</th>
 					</tr>
 				</thead>
@@ -88,11 +85,8 @@
 						<td>{{computador.modelo}}</td>
 						<td>{{computador.nome}}</td>
 						<td>{{computador.ramal}}</td>
-						<td>{{computador.gap_tomb}}</td>
 						<td>{{computador.setor}}</td>
 						<td>{{computador.ip}}</td>
-						<td>{{computador.tipo}}</td>
-						<td>{{computador.descricao}}</td>
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{computador.id}}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{computador.id}}" >Editar</a>

@@ -34,9 +34,9 @@
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="/gpm/painel">Início</a></li>
 						     <li><a href="../listar">Usuário</a></li>
-						     <li><a href="../computador/listar">Computador</a></li>
-						     <li><a href="../monitor/listar">Monitor</a></li>
-						     <li><a href="../impressora/listar">Impressora</a></li>
+						     <li><a href="/gpm/computador/listar">Computador</a></li>
+						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						     <li><a href="/gpm/impressora/listar">Impressora</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -59,7 +59,7 @@
 							<div class="form-group" >
 								<label for="nome" class="col-sm-2 control-label">Codigo
 								*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="id" name="id"
 										placeholder="Código do Usuário" required="required"
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${usuario.id}'"/>
@@ -70,8 +70,12 @@
 									Completo*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Nome Completo do Usuário" required="required" style="text-transform:uppercase"
+										placeholder="Nome Completo do Usuário" required="required" ng-minlength="3" ng-maxlength="30"
 										autofocus="autofocus" ng-model="nome" ng-init="nome='${usuario.nome}'"/>
+										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block">Nome é Obrigatório.</p>
+										<p ng-show="userForm.nome.$error.minlength" class="help-block">Nome mínimo de 3 caracteres.</p>
+                						<p ng-show="userForm.nome.$error.maxlength" class="help-block">Nome máximo de 30 caracteres.</p>
+										
 								</div>
 								</div>
 								<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
@@ -80,6 +84,7 @@
 									<input type="email" class="form-control" id="email" name="email"
 										placeholder="Email do Usuário" required="required" 
 										autofocus="autofocus" ng-model="email" ng-init="email='${usuario.email}'"/>
+										<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Informe um E-mail Válido.</p>
 								</div>
 							</div>
 							<span class='msg-erro msg-nome'></span>
@@ -87,19 +92,25 @@
 							<span class='msg-erro msg-email'></span>
 							<div class="form-group" ng-class="{ 'has-error' : userForm.senha.$invalid && !userForm.senha.$pristine }">
 								<label for="ip" class="col-sm-2 control-label">Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="password" class="form-control" id="senha" 
-										name="senha" placeholder="Senha do Usuário" required="required"
+										name="senha" placeholder="Senha do Usuário" required="required" ng-minlength="6" ng-maxlength="30"
 										autofocus="autofocus" ng-model="senha" ng-init="senha='${usuario.senha}'"/>
+										<p ng-show="userForm.senha.$invalid && !userForm.senha.$pristine" class="help-block">Senha é Obrigatório.</p>
+										<p ng-show="userForm.senha.$error.minlength" class="help-block">Senha minima de 6 caracteres.</p>
+                						<p ng-show="userForm.senha.$error.maxlength" class="help-block">Senha máximo de 30 caracteres.</p>
 								</div>
 								</div>
 								<div class="form-group" ng-class="{ 'has-error' : userForm.rsenha.$invalid && !userForm.rsenha.$pristine }">
 								<label for="ip" class="col-sm-2 control-label">Repetir
 									Senha*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="password" class="form-control" id="rsenha"
-										name="rsenha" placeholder="Senha do Usuário" 
+										name="rsenha" placeholder="Senha do Usuário" ng-minlength="6" ng-maxlength="30"
 										required="required" autofocus="autofocus" ng-model="rsenha" ng-init="rsenha='${usuario.senha}'"/>
+										<p ng-show="userForm.rsenha.$invalid && !userForm.rsenha.$pristine" class="help-block">Repetir Senha é Obrigatório.</p>
+										<p ng-show="userForm.rsenha.$error.minlength" class="help-block">Repetição de Senha no mínimo 6 caracteres.</p>
+                						<p ng-show="userForm.rsenha.$error.maxlength" class="help-block">Repetição de Senha no máximo 30 caracteres.</p>
 									</div>
 							</div>
 							<span class='msg-erro msg-senha'></span>
@@ -107,16 +118,20 @@
 							<span class='msg-erro msg-rsenha'></span>
 							<div class="form-group" ng-class="{ 'has-error' : userForm.telefone.$invalid && !userForm.telefone.$pristine }">
 								<label for="ramal" class="col-sm-2 control-label">Telefone</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="telefone" class="form-control" id="telefone"
-										name="telefone" placeholder="Telefone do Usuário" 
+										name="telefone" placeholder="Telefone do Usuário"  ng-minlength="9" ng-maxlength="20"
 										required="required" autofocus="autofocus" ng-model="telefone" ng-init="telefone='${usuario.telefone}'"/>
+										<p ng-show="userForm.telefone.$invalid && !userForm.telefone.$pristine" class="help-block">Telefone é Obrigatório.</p>
+										<p ng-show="userForm.telefone.$error.minlength" class="help-block">Número telefônico no mínimo 9 caracteres.</p>
+                						<p ng-show="userForm.telefone.$error.maxlength" class="help-block">Número telefônico no máximo 20 caracteres.</p>
+										
 								</div>
 								</div>
 								
 								<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Perfil*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<select class="form-control" name="perfil" id="perfil"  ng-model="perfil" ng-init="perfil='${usuario.perfil}'">
 										<option valeu="padrao">Padrão</option>
 										<option valeu="admin">Admin</option>

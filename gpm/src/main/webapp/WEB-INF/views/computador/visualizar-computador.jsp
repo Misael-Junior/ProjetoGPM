@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>GPM | EDITAR CADASTRO DE IMPRESSORA</title>
+		<title>GPM | VISUALIZAR COMPUTADOR</title>
 		
 		<!-- CSS -->
 		<link href="<c:url value='/resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
@@ -33,10 +33,10 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="/gpm/painel">Início</a></li>
-						     <li><a href="../usuario/listar">Usuário</a></li>
-						     <li><a href="../computador/listar">Computador</a></li>
-						     <li><a href="../monitor/listar">Monitor</a></li>
-						     <li><a href="../listar">Impressora</a></li>
+						     <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						     <li><a href="../listar">Computador</a></li>
+						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						     <li><a href="/gpm/impressora/listar">Impressora</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -49,7 +49,7 @@
 			<div class="panel panel-computador panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title panel-title-computador">Visualizar Cadastro de
-						Impressora</h3>
+						Computador</h3>
 				</div>
 				
 				<!-- Formulário -->
@@ -63,7 +63,7 @@
 						<div class="form-group">
 								<label for="codigo" class="col-sm-2 control-label">Codigo
 								*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="id" name="id"
 										placeholder="Código do Computador" required="required"
 										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${computador.id}'"/>
@@ -73,7 +73,7 @@
 						
 								<div  class="form-group"  ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">		
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 										<input type="text" class="form-control" id="nome" name="nome"
 										placeholder="Modelo do computador" required="required"
 										autofocus="autofocus" ng-model="modelo" required  readonly="readonly" ng-init="modelo='${computador.modelo}'"/>
@@ -103,7 +103,7 @@
 
 							<div class="form-group" ng-class="{ 'has-error' : userForm.gap_tomb.$invalid && !userForm.gap_tomb.$pristine }" >
 								<label for="gap_tomb" class="col-sm-2 control-label">Tombamento*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="gap_tomb"
 										name="gap_tomb" placeholder="(Patrimônio)" required
 										autofocus="autofocus" ng-model="gap_tomb"  readonly="readonly" ng-init="gap_tomb='${computador.gap_tomb}'"/>
@@ -113,7 +113,7 @@
 								
 								<div class="form-group" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="setor"
 										name="setor" placeholder="Ex: Diagnósticos"
 										required autofocus="autofocus" ng-model="setor"  readonly="readonly" ng-init="setor='${computador.setor}'" />
@@ -123,7 +123,7 @@
 
                                 <div class="form-group" ng-class="{ 'has-error' : userForm.ip.$invalid && !userForm.ip.$pristine }" >
 								<label for="ip" class="col-sm-2 control-label">IP*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ip"
 										name="ip" placeholder="Ex: 192.168.102.14" required
 										autofocus="autofocus" ng-model="ip"  readonly="readonly" ng-init="ip='${computador.ip}'"/>
@@ -133,7 +133,7 @@
 								
 								 <div class="form-group" ng-class="{ 'has-error' : userForm.tipo.$invalid && !userForm.tipo.$pristine }" >
 								<label for="tipo" class="col-sm-2 control-label">Tipo*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="tipo"
 										name="tipo" placeholder="1 ou 2" required
 										autofocus="autofocus" ng-model="tipo"  readonly="readonly" ng-init="tipo='${computador.tipo}'"/>
@@ -145,7 +145,7 @@
 								
 									<div class="form-group" ng-class="{ 'has-error' : userForm.ramal.$invalid && !userForm.ramal.$pristine }" >
 								<label for="ramal" class="col-sm-2 control-label">Ramal*</label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ramal"
 										name="ramal" placeholder="Ramal" required
 										autofocus="autofocus" ng-model="ramal"  readonly="readonly" ng-init="ramal='${computador.ramal}'"/>
