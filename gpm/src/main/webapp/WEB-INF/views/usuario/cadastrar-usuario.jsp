@@ -125,17 +125,15 @@
 									<select class="form-control" name="perfil" id="perfil" ng-model="perfil" ng-init="perfil='Padrão'">
 										<option valeu="Padrão" ng-selected="true">Padrão</option>
 										<option valeu="Admin">Admin</option>
-									</select>
-								</div>
-								</div>
-						
+									</select>										
 				
 							<div class="form-group" align="center">
 								<div class="col-sm-5">
 									<button type="button" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="submitForm(userForm.$valid)" >Cadastrar</button>
 								</div>
 							</div>
-							
+							</div>
+							</div>
 						</div>
 					</div>
 				</form>
