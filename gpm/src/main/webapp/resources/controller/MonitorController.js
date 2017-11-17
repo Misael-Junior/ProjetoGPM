@@ -41,6 +41,21 @@ MonitorControllerApp.controller("MonitorController", function($scope, $window, $
 		 
 	 }
 	
+	 $scope.buscar = function(nome){
+			
+			$scope.monitores = new Array();
+			
+			var response = $http.post("buscar/" + nome);
+			
+			response.success(function(data, status, headers, config){
+			
+				$scope.monitores = data;
+				
+			});
+			
+			
+		}
+	
 	$scope.cadastrarMonitor = function(){
 		
 	

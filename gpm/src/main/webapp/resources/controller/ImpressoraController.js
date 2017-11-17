@@ -44,6 +44,21 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 		 
 	 }
 	
+      $scope.buscar = function(nome){
+		
+		$scope.impressoras = new Array();
+		
+		var response = $http.post("buscar/" + nome);
+		
+		response.success(function(data, status, headers, config){
+		
+			$scope.impressoras = data;
+			
+		});
+		
+		
+	}
+	
 	$scope.cadastrarImpressora = function(){
 		
 	

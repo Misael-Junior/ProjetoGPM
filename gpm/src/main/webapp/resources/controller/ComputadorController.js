@@ -17,7 +17,22 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 	$scope.ip         = null;
 	
 	
-	$scope.init = function(){
+   $scope.init = function(setor){		
+		
+		if(setor == null){
+			
+			$scope.listar();
+			
+		}else{
+			
+			$scope.buscar();
+			
+		}
+		
+	}
+	
+	
+	$scope.listar = function(){
 		
 		$scope.computadores = new Array();
 	
@@ -45,6 +60,23 @@ ComputadorControllerApp.controller("ComputadorController", function($scope, $win
 		 }
 		 
 	 }
+	
+        $scope.buscar = function(setor){
+		
+		$scope.computadores = new Array();
+		
+		var response = $http.post("buscar/" + setor);
+		
+		response.success(function(data, status, headers, config){
+		
+			$scope.computadores = data;
+			
+			
+			
+		});
+		
+		
+	}
 	
 	$scope.cadastrarComputador = function(){
 		

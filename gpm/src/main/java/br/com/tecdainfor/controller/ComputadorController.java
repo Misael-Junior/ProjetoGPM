@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ComputadorDAO;
 import br.com.tecdainfor.model.Computador;
+import br.com.tecdainfor.model.Usuario;
 
 @Controller
 @RequestMapping("/computador")
@@ -63,12 +64,11 @@ public class ComputadorController {
 		computadordao.alterarComputador(computador);
 		return computador;
 	}
-	/*
-	@RequestMapping (value = "/buscar/{nome}", method = RequestMethod.POST)
-	public @ResponseBody List<Computador> consultarComputadorNome(@PathVariable String nome){
-		return this.computadordao.listarComputadores()(nome);
+	@RequestMapping (value = "/buscar/{setor}", method = RequestMethod.POST)
+	public @ResponseBody List<Computador> listaCompSetor(@PathVariable String setor){
+		List<Computador> computador = computadordao.listaCompSetor(setor);
+		return computador;
 	}
-	*/
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
 	public @ResponseBody Computador excluir(@PathVariable int id){
 		return this.computadordao.excluir(id);

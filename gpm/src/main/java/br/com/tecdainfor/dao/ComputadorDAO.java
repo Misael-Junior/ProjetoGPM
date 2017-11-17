@@ -12,7 +12,7 @@ public interface ComputadorDAO {
 
 	Computador consultarComputador(int id);
 
-	List<Computador> listaCompSetor(String nome);
+	List<Computador> listaCompSetor(String setor);
 
 	Computador excluir(int id);
 

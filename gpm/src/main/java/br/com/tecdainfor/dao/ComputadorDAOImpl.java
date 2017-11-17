@@ -51,9 +51,9 @@ public class ComputadorDAOImpl implements ComputadorDAO{
 	@Override
 	@SuppressWarnings("unchecked")
 	@javax.transaction.Transactional
-	public List<Computador> listaCompSetor(String nome){
-		return manager.createQuery(" SELECT u FROM Computador u WHERE u.setor = nome ").getResultList();
-		
+	public List<Computador> listaCompSetor(String setor){
+		List<Computador> computador =  manager.createQuery(" SELECT u FROM Computador u WHERE u.setor LIKE '" + setor + "%'").getResultList();		
+		return computador;
 	}
 	
 	/* (non-Javadoc)
